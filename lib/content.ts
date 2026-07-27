@@ -5,6 +5,7 @@ import {
   Cog,
   Droplets,
   Factory,
+  Forklift,
   Gauge,
   Handshake,
   HardHat,
@@ -45,7 +46,7 @@ export const MACHINES: { id: string; icon: LucideIcon }[] = [
   { id: "loaders", icon: Tractor },
   { id: "dozers", icon: Mountain },
   { id: "construction", icon: Building2 },
-  { id: "caterpillar", icon: Cog },
+  { id: "special", icon: Forklift },
   { id: "mining", icon: Pickaxe },
 ];
 

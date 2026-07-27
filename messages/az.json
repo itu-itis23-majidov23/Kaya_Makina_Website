@@ -11,6 +11,7 @@
     "closeMenu": "Menyunu bağla"
   },
   "common": {
+    "tagline": "Ağır texnika servisi",
     "learnMore": "Ətraflı",
     "whatsapp": "WhatsApp ilə yazın",
     "close": "Bağla",
@@ -20,7 +21,7 @@
   "meta": {
     "home": {
       "title": "Ağır texnika servisi və təmiri — Bakı",
-      "description": "Kaya Makina — Azərbaycanda ekskavator və tikinti texnikasının peşəkar təmiri, texniki xidməti və sahə dəstəyi. Caterpillar tipli maşınlar üzrə ixtisaslaşmış servis."
+      "description": "Kaya Makina — Azərbaycanda ekskavator və tikinti texnikasının peşəkar təmiri, texniki xidməti və sahə dəstəyi. Bütün əsas markalar üzrə müstəqil peşəkar servis."
     },
     "about": {
       "title": "Haqqımızda",
@@ -45,7 +46,7 @@
   },
   "home": {
     "hero": {
-      "kicker": "Caterpillar Servis · Bakı",
+      "kicker": "Peşəkar servis mərkəzi · Bakı",
       "title": "Ağır texnikanız üçün etibarlı servis",
       "subtitle": "Kaya Makina Azərbaycanda ekskavatorlar və tikinti texnikası üçün peşəkar təmir, texniki xidmət və texniki dəstək təqdim edir.",
       "secondary": "Xidmətlərimiz"
@@ -79,13 +80,13 @@
     "machines": {
       "kicker": "Texnika",
       "title": "Xidmət göstərdiyimiz maşınlar",
-      "lead": "Caterpillar tipli maşınlar da daxil olmaqla bütün əsas istehsalçıların texnikası.",
+      "lead": "Bütün əsas istehsalçıların tikinti və mədən texnikasına xidmət göstəririk.",
       "items": {
         "excavators": "Ekskavatorlar",
         "loaders": "Yükləyicilər",
         "dozers": "Buldozerlər",
         "construction": "Tikinti texnikası",
-        "caterpillar": "Caterpillar tipli maşınlar",
+        "special": "Xüsusi texnika",
         "mining": "Mədən texnikası"
       }
     },
@@ -188,7 +189,7 @@
           "Yanacaq sisteminin diaqnostikası",
           "Turbokompressor xidməti"
         ],
-        "equipment": "Caterpillar tipli və digər sənaye dizel mühərrikləri"
+        "equipment": "Bütün əsas markaların sənaye dizel mühərrikləri"
       },
       "field": {
         "title": "Səyyar xidmət",
@@ -367,6 +368,7 @@
     "blurb": "Ekskavator və ağır tikinti texnikasının peşəkar təmiri, texniki xidməti və sahə dəstəyi. Bakı, Azərbaycan.",
     "quickLinks": "Faydalı keçidlər",
     "rights": "Bütün hüquqlar qorunur.",
-    "location": "Bakı · Azərbaycan"
+    "location": "Bakı · Azərbaycan",
+    "disclaimer": "Kaya Makina müstəqil servis şirkətidir; Caterpillar Inc. və ya hər hansı digər texnika istehsalçısı ilə əlaqəli deyil və onlar tərəfindən səlahiyyətləndirilməyib. Bütün brend adları və əmtəə nişanları müvafiq sahiblərinə məxsusdur və yalnız identifikasiya məqsədilə istifadə olunur."
   }
 }

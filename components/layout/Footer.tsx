@@ -16,6 +16,7 @@ const NAV = [
 
 export default function Footer() {
   const tNav = useTranslations("nav");
+  const tCommon = useTranslations("common");
   const tFooter = useTranslations("footer");
   const tServices = useTranslations("services.items");
   const tContact = useTranslations("contact.info");
@@ -41,7 +42,7 @@ export default function Footer() {
                 Kaya <span className="text-brand-500">Makina</span>
               </span>
               <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-[0.3em] text-ink-400">
-                Caterpillar Service
+                {tCommon("tagline")}
               </span>
             </span>
           </div>
@@ -120,6 +121,11 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
+          <p className="text-[11px] leading-relaxed text-ink-500">
+            {tFooter("disclaimer")}
+          </p>
+        </div>
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-ink-500 sm:flex-row sm:px-6 lg:px-8">
           <p>
             © {new Date().getFullYear()} Kaya Makina. {tFooter("rights")}

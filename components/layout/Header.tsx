@@ -19,6 +19,7 @@ const NAV = [
 
 export default function Header() {
   const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -68,7 +69,7 @@ export default function Header() {
               Kaya <span className="text-brand-500">Makina</span>
             </span>
             <span className="mt-0.5 block text-[10px] font-semibold uppercase tracking-[0.3em] text-ink-400">
-              Caterpillar Service
+              {tCommon("tagline")}
             </span>
           </span>
         </Link>

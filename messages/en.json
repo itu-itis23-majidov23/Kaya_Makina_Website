@@ -11,6 +11,7 @@
     "closeMenu": "Close menu"
   },
   "common": {
+    "tagline": "Heavy Machinery Service",
     "learnMore": "Learn more",
     "whatsapp": "Message us on WhatsApp",
     "close": "Close",
@@ -20,7 +21,7 @@
   "meta": {
     "home": {
       "title": "Heavy Machinery Service & Repair — Baku",
-      "description": "Kaya Makina — professional repair, maintenance and field support for excavators and construction machinery in Azerbaijan. Specialized service for Caterpillar-type machines."
+      "description": "Kaya Makina — professional repair, maintenance and field support for excavators and construction machinery in Azerbaijan. Independent professional service for all major equipment brands."
     },
     "about": {
       "title": "About Us",
@@ -45,7 +46,7 @@
   },
   "home": {
     "hero": {
-      "kicker": "Caterpillar Service · Baku",
+      "kicker": "Professional Service Center · Baku",
       "title": "Heavy machinery service you can trust",
       "subtitle": "Kaya Makina provides expert repair, maintenance and technical support services for excavators and construction machinery in Azerbaijan.",
       "secondary": "Our Services"
@@ -79,13 +80,13 @@
     "machines": {
       "kicker": "Equipment",
       "title": "Machines we service",
-      "lead": "Equipment from all major manufacturers, including Caterpillar-type machines.",
+      "lead": "We service construction and mining equipment from all major manufacturers.",
       "items": {
         "excavators": "Excavators",
         "loaders": "Loaders",
         "dozers": "Bulldozers",
         "construction": "Construction equipment",
-        "caterpillar": "Caterpillar-type machines",
+        "special": "Special equipment",
         "mining": "Mining equipment"
       }
     },
@@ -188,7 +189,7 @@
           "Fuel system diagnostics",
           "Turbocharger service"
         ],
-        "equipment": "Caterpillar-type and other industrial diesel engines"
+        "equipment": "Industrial diesel engines of all major brands"
       },
       "field": {
         "title": "Field Service",
@@ -367,6 +368,7 @@
     "blurb": "Professional repair, maintenance and field support for excavators and heavy construction machinery. Baku, Azerbaijan.",
     "quickLinks": "Quick links",
     "rights": "All rights reserved.",
-    "location": "Baku · Azerbaijan"
+    "location": "Baku · Azerbaijan",
+    "disclaimer": "Kaya Makina is an independent service company and is not affiliated with, endorsed by, or authorized by Caterpillar Inc. or any other equipment manufacturer. All brand names and trademarks are the property of their respective owners and are used for identification purposes only."
   }
 }
