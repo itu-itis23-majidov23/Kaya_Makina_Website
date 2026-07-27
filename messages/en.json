@@ -1,0 +1,372 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "equipment": "Equipment",
+    "projects": "Projects",
+    "contact": "Contact",
+    "requestService": "Request Service",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "whatsapp": "Message us on WhatsApp",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "meta": {
+    "home": {
+      "title": "Heavy Machinery Service & Repair — Baku",
+      "description": "Kaya Makina — professional repair, maintenance and field support for excavators and construction machinery in Azerbaijan. Specialized service for Caterpillar-type machines."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Kaya Makina's history, mission, vision and engineering approach. A professional heavy machinery service team in Baku."
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Excavator repair, hydraulic systems, engine and transmission, scheduled maintenance, field service and spare parts."
+    },
+    "equipment": {
+      "title": "Machines We Service",
+      "description": "Excavators, loaders, bulldozers and mining trucks — diagnostics, repair and maintenance for all major brands."
+    },
+    "projects": {
+      "title": "Projects & Gallery",
+      "description": "Workshop repairs, field service and fleet support — examples of Kaya Makina's work."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact Kaya Makina for service requests and quotes. Baku, Azerbaijan. Phone, email and WhatsApp."
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Caterpillar Service · Baku",
+      "title": "Heavy machinery service you can trust",
+      "subtitle": "Kaya Makina provides expert repair, maintenance and technical support services for excavators and construction machinery in Azerbaijan.",
+      "secondary": "Our Services"
+    },
+    "about": {
+      "kicker": "Kaya Makina",
+      "title": "Engineering precision for heavy equipment",
+      "text": "Built on years of hands-on experience, our team specializes in the diagnostics, repair and maintenance of heavy machinery — from excavators to mining equipment. Our goal is simple: minimize your machine downtime.",
+      "badge": "10+ years of experience",
+      "points": {
+        "experience": {
+          "title": "Experienced team",
+          "text": "Years of accumulated field and workshop experience with heavy equipment."
+        },
+        "expertise": {
+          "title": "Technical mastery",
+          "text": "Modern diagnostic equipment and factory-standard repair procedures."
+        },
+        "customer": {
+          "title": "Customer-focused service",
+          "text": "Transparent pricing, reliable deadlines and continuous technical support."
+        }
+      },
+      "cta": "About the company"
+    },
+    "services": {
+      "kicker": "Services",
+      "title": "What we offer",
+      "lead": "From diagnostics to full overhauls — a complete range of services to keep your equipment running."
+    },
+    "machines": {
+      "kicker": "Equipment",
+      "title": "Machines we service",
+      "lead": "Equipment from all major manufacturers, including Caterpillar-type machines.",
+      "items": {
+        "excavators": "Excavators",
+        "loaders": "Loaders",
+        "dozers": "Bulldozers",
+        "construction": "Construction equipment",
+        "caterpillar": "Caterpillar-type machines",
+        "mining": "Mining equipment"
+      }
+    },
+    "whyUs": {
+      "kicker": "Why us",
+      "title": "Why choose Kaya Makina?",
+      "points": {
+        "technicians": {
+          "title": "Experienced technicians",
+          "text": "Certified specialists resolve even the most complex failures quickly."
+        },
+        "response": {
+          "title": "Fast response",
+          "text": "We respond to your request immediately — every idle hour costs money."
+        },
+        "diagnostics": {
+          "title": "Professional diagnostics",
+          "text": "We pinpoint the root cause of a failure with modern equipment."
+        },
+        "parts": {
+          "title": "Quality spare parts",
+          "text": "We only use genuine or OEM-standard parts."
+        },
+        "expertise": {
+          "title": "Industrial expertise",
+          "text": "We know the demands of the construction, mining and infrastructure sectors."
+        },
+        "reliability": {
+          "title": "Reliable solutions",
+          "text": "We guarantee our work and stand behind the result."
+        }
+      }
+    },
+    "stats": {
+      "years": "Years of experience",
+      "machines": "Machines serviced",
+      "support": "Technical support",
+      "team": "Team specialists"
+    },
+    "brands": {
+      "title": "Brands we service"
+    },
+    "cta": {
+      "title": "Your machine downtime costs money",
+      "text": "Let Kaya Makina restore your equipment quickly. Get in touch with us today.",
+      "button": "Contact our team"
+    }
+  },
+  "services": {
+    "intro": {
+      "kicker": "Services",
+      "title": "Our Services",
+      "lead": "Complete service for every major system of your heavy equipment — under one roof."
+    },
+    "equipmentLabel": "Equipment supported",
+    "items": {
+      "excavator": {
+        "title": "Excavator Repair",
+        "short": "Mechanical diagnostics, engine and hydraulic repair — in one place.",
+        "description": "We specialize in complete diagnostics and repair of excavators. From mechanical failures to engine and hydraulic system problems — we restore your machine to factory specifications.",
+        "bullets": [
+          "Computerized mechanical diagnostics",
+          "Engine repair and overhaul",
+          "Hydraulic system repair",
+          "Attachment and work tool restoration"
+        ],
+        "equipment": "Crawler and wheeled excavators by Caterpillar, Komatsu, Hitachi, Volvo, Doosan, Hyundai and other brands"
+      },
+      "maintenance": {
+        "title": "Heavy Equipment Maintenance",
+        "short": "Scheduled maintenance, fleet support and preventive inspections.",
+        "description": "Scheduled maintenance prevents unexpected breakdowns. We build a tailored service schedule for your fleet and document everything — from filter and oil changes to full inspections.",
+        "bullets": [
+          "Scheduled maintenance per manufacturer intervals",
+          "Corporate support for equipment fleets",
+          "Preventive inspections and reporting",
+          "Oil and filter analysis"
+        ],
+        "equipment": "Construction and mining equipment fleets of all types"
+      },
+      "hydraulics": {
+        "title": "Hydraulic Systems",
+        "short": "Repair and restoration of pumps, cylinders and valves.",
+        "description": "Hydraulics are the heart of heavy machinery. We have the equipment to diagnose, repair and test hydraulic pumps, cylinders, valves and hydraulic motors.",
+        "bullets": [
+          "Hydraulic pump repair",
+          "Cylinder restoration and seal kits",
+          "Valve block adjustment",
+          "Hose and line replacement"
+        ],
+        "equipment": "Excavators, loaders, bulldozers and other machines with hydraulic systems"
+      },
+      "engine": {
+        "title": "Engine & Transmission Service",
+        "short": "Overhaul of diesel engines and transmissions.",
+        "description": "Diagnostics, running repairs and complete overhauls of diesel engines and drivetrains. We work to factory tolerances and hand over tested, verified machines.",
+        "bullets": [
+          "Complete engine overhaul",
+          "Transmission and gearbox repair",
+          "Fuel system diagnostics",
+          "Turbocharger service"
+        ],
+        "equipment": "Caterpillar-type and other industrial diesel engines"
+      },
+      "field": {
+        "title": "Field Service",
+        "short": "On-site repair and emergency support at your job site.",
+        "description": "Machines can't always be brought to the workshop. Our mobile service crews come directly to your site with the right tools and spare parts and carry out repairs on the spot.",
+        "bullets": [
+          "On-site diagnostics and repair",
+          "Rapid emergency call-out support",
+          "Fully equipped mobile service vehicles",
+          "Coverage across the regions"
+        ],
+        "equipment": "All types of self-propelled construction and mining machinery"
+      },
+      "parts": {
+        "title": "Spare Parts & Technical Support",
+        "short": "Supply of quality parts and expert advice.",
+        "description": "We organize fast supply of genuine and OEM-standard spare parts and provide technical guidance on the right selection. Parts and installation — from a single source.",
+        "bullets": [
+          "Genuine and OEM parts supply",
+          "Filters, oils and consumables",
+          "Technical consultation",
+          "Installation and warranty"
+        ],
+        "equipment": "Heavy machinery of all major brands"
+      }
+    }
+  },
+  "equipment": {
+    "intro": {
+      "kicker": "Equipment catalog",
+      "title": "Machines We Service",
+      "lead": "We service all major types of heavy machinery used in the construction, mining and infrastructure sectors."
+    },
+    "note": "Have a machine that isn't listed? Contact us — we also service graders, cranes, pavers and other specialized equipment.",
+    "categories": {
+      "excavators": {
+        "name": "Excavators",
+        "description": "Complete diagnostics, repair and maintenance of crawler and wheeled excavators.",
+        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+      },
+      "loaders": {
+        "name": "Loaders",
+        "description": "Engine, transmission and hydraulic repair for wheel and telescopic loaders.",
+        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+      },
+      "dozers": {
+        "name": "Bulldozers",
+        "description": "Undercarriage, drivetrain and work equipment restoration for bulldozers.",
+        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+      },
+      "trucks": {
+        "name": "Mining Trucks",
+        "description": "Heavy-duty service for quarry dump trucks and mining equipment.",
+        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+      }
+    }
+  },
+  "projects": {
+    "intro": {
+      "kicker": "Projects",
+      "title": "Examples of Our Work",
+      "lead": "From workshop overhauls to field service — snapshots from our daily work."
+    },
+    "note": "This gallery is representative and will be updated regularly with new project photos.",
+    "captions": {
+      "g01": "Excavator at a mining site",
+      "g02": "Job site at sunset",
+      "g03": "Welding works — workshop",
+      "g04": "Loader in an underground quarry",
+      "g05": "Cranes on a construction site",
+      "g06": "Engine repair in progress",
+      "g07": "Undercarriage restoration",
+      "g08": "Heavy machinery on site"
+    }
+  },
+  "about": {
+    "intro": {
+      "kicker": "About us",
+      "title": "Kaya Makina",
+      "lead": "A Baku-based engineering team specialized in the repair and maintenance of heavy machinery."
+    },
+    "story": {
+      "kicker": "Our history",
+      "title": "Trust built on experience",
+      "p1": "Kaya Makina was built on years of hands-on experience in the heavy machinery sector. What began as a small workshop has grown into a professional service center covering a wide range of machines — from excavators to mining equipment.",
+      "p2": "Today we keep the fleets of construction companies and infrastructure contractors running. We approach every repair with engineering precision and guarantee the result."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "To minimize our customers' heavy equipment downtime — through professional diagnostics, quality repair and responsive field support."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the first choice for heavy machinery service in Azerbaijan and bring internationally benchmarked service standards to the local market."
+    },
+    "approach": {
+      "kicker": "Our approach",
+      "title": "The engineering approach",
+      "lead": "Every repair is built on four principles.",
+      "points": {
+        "diagnostics": {
+          "title": "Accurate diagnosis first",
+          "text": "We never start a repair before finding the root cause of the failure."
+        },
+        "parts": {
+          "title": "Right part, right tool",
+          "text": "We work with genuine/OEM parts and calibrated equipment."
+        },
+        "safety": {
+          "title": "Safety first",
+          "text": "All work is carried out to industrial safety standards."
+        },
+        "transparency": {
+          "title": "Transparent process",
+          "text": "Full accountability on price, timeline and the work performed."
+        }
+      }
+    },
+    "team": {
+      "kicker": "Team",
+      "title": "A professional team",
+      "text": "Our team consists of certified mechanics, hydraulics specialists and field engineers. Continuous training keeps our expertise current with the newest generations of equipment."
+    }
+  },
+  "contact": {
+    "intro": {
+      "kicker": "Contact",
+      "title": "Get in Touch",
+      "lead": "For service requests, quotes or technical questions — our team is ready to help."
+    },
+    "info": {
+      "title": "Contact details",
+      "addressLabel": "Address",
+      "address": "Baku, Azerbaijan",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "hoursLabel": "Working hours",
+      "hours": "Mon–Sat: 09:00–18:00"
+    },
+    "form": {
+      "title": "Send a service request",
+      "lead": "Fill in the form and we will get back to you shortly.",
+      "fields": {
+        "name": "Full name",
+        "company": "Company",
+        "phone": "Phone",
+        "email": "Email",
+        "machine": "Machine type",
+        "message": "Your message"
+      },
+      "machineOptions": {
+        "excavators": "Excavator",
+        "loaders": "Loader",
+        "dozers": "Bulldozer",
+        "trucks": "Mining truck",
+        "other": "Other"
+      },
+      "errors": {
+        "required": "This field is required",
+        "phone": "Please enter a valid phone number",
+        "email": "Please enter a valid email address"
+      },
+      "submit": "Send",
+      "sending": "Sending…",
+      "success": "Your request has been received. We will contact you shortly.",
+      "error": "Something went wrong. Please contact us by phone or WhatsApp.",
+      "fallbackNote": "The form currently sends via your email client. You can also reach us directly by phone or WhatsApp.",
+      "mailSubject": "Service request — kaya-makina.com"
+    },
+    "map": {
+      "title": "Find us on the map",
+      "placeholder": "Google Maps will be added soon. Address: Baku, Azerbaijan."
+    }
+  },
+  "footer": {
+    "blurb": "Professional repair, maintenance and field support for excavators and heavy construction machinery. Baku, Azerbaijan.",
+    "quickLinks": "Quick links",
+    "rights": "All rights reserved.",
+    "location": "Baku · Azerbaijan"
+  }
+}

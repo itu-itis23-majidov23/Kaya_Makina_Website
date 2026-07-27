@@ -1,0 +1,372 @@
+{
+  "nav": {
+    "home": "Ana səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "equipment": "Texnika",
+    "projects": "Layihələr",
+    "contact": "Əlaqə",
+    "requestService": "Servis sifariş et",
+    "openMenu": "Menyunu aç",
+    "closeMenu": "Menyunu bağla"
+  },
+  "common": {
+    "learnMore": "Ətraflı",
+    "whatsapp": "WhatsApp ilə yazın",
+    "close": "Bağla",
+    "previous": "Əvvəlki",
+    "next": "Növbəti"
+  },
+  "meta": {
+    "home": {
+      "title": "Ağır texnika servisi və təmiri — Bakı",
+      "description": "Kaya Makina — Azərbaycanda ekskavator və tikinti texnikasının peşəkar təmiri, texniki xidməti və sahə dəstəyi. Caterpillar tipli maşınlar üzrə ixtisaslaşmış servis."
+    },
+    "about": {
+      "title": "Haqqımızda",
+      "description": "Kaya Makina-nın tarixi, missiyası, vizyonu və mühəndislik yanaşması. Bakıda ağır texnika servisində peşəkar komanda."
+    },
+    "services": {
+      "title": "Xidmətlərimiz",
+      "description": "Ekskavator təmiri, hidravlik sistemlər, mühərrik və transmissiya, planlı texniki xidmət, səyyar servis və ehtiyat hissələri."
+    },
+    "equipment": {
+      "title": "Xidmət göstərdiyimiz texnika",
+      "description": "Ekskavatorlar, yükləyicilər, buldozerlər və karyer texnikası — bütün əsas markalar üzrə diaqnostika, təmir və texniki xidmət."
+    },
+    "projects": {
+      "title": "Layihələr və qalereya",
+      "description": "Emalatxana təmirləri, sahə xidməti və texnika parklarına dəstək — Kaya Makina-nın işlərindən nümunələr."
+    },
+    "contact": {
+      "title": "Əlaqə",
+      "description": "Servis sifarişi və qiymət təklifi üçün Kaya Makina ilə əlaqə saxlayın. Bakı, Azərbaycan. Telefon, e-poçt və WhatsApp."
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Caterpillar Servis · Bakı",
+      "title": "Ağır texnikanız üçün etibarlı servis",
+      "subtitle": "Kaya Makina Azərbaycanda ekskavatorlar və tikinti texnikası üçün peşəkar təmir, texniki xidmət və texniki dəstək təqdim edir.",
+      "secondary": "Xidmətlərimiz"
+    },
+    "about": {
+      "kicker": "Kaya Makina",
+      "title": "Ağır texnikada mühəndislik dəqiqliyi",
+      "text": "İllərin təcrübəsinə əsaslanan komandamız ekskavatorlardan mədən texnikasına qədər ağır maşınların diaqnostikası, təmiri və texniki xidməti üzrə ixtisaslaşıb. Məqsədimiz sadədir: texnikanızın boş dayanma müddətini minimuma endirmək.",
+      "badge": "10+ il təcrübə",
+      "points": {
+        "experience": {
+          "title": "Təcrübəli komanda",
+          "text": "Ağır texnika üzrə illərlə toplanmış sahə və emalatxana təcrübəsi."
+        },
+        "expertise": {
+          "title": "Texniki ustalıq",
+          "text": "Müasir diaqnostika avadanlığı və zavod standartlarına uyğun təmir prosedurları."
+        },
+        "customer": {
+          "title": "Müştəri yönümlü xidmət",
+          "text": "Şəffaf qiymətləndirmə, dəqiq müddətlər və davamlı texniki dəstək."
+        }
+      },
+      "cta": "Şirkət haqqında"
+    },
+    "services": {
+      "kicker": "Xidmətlər",
+      "title": "Nə təklif edirik",
+      "lead": "Diaqnostikadan əsaslı təmirə qədər — texnikanızı işlək vəziyyətdə saxlamaq üçün tam xidmət spektri."
+    },
+    "machines": {
+      "kicker": "Texnika",
+      "title": "Xidmət göstərdiyimiz maşınlar",
+      "lead": "Caterpillar tipli maşınlar da daxil olmaqla bütün əsas istehsalçıların texnikası.",
+      "items": {
+        "excavators": "Ekskavatorlar",
+        "loaders": "Yükləyicilər",
+        "dozers": "Buldozerlər",
+        "construction": "Tikinti texnikası",
+        "caterpillar": "Caterpillar tipli maşınlar",
+        "mining": "Mədən texnikası"
+      }
+    },
+    "whyUs": {
+      "kicker": "Üstünlüklərimiz",
+      "title": "Niyə Kaya Makina?",
+      "points": {
+        "technicians": {
+          "title": "Təcrübəli texniklər",
+          "text": "Sertifikatlı mütəxəssislər ən mürəkkəb nasazlıqları belə operativ aradan qaldırır."
+        },
+        "response": {
+          "title": "Sürətli reaksiya",
+          "text": "Müraciətinizə dərhal cavab veririk — texnikanın hər boş saatı pula başa gəlir."
+        },
+        "diagnostics": {
+          "title": "Peşəkar diaqnostika",
+          "text": "Müasir avadanlıqla nasazlığın kök səbəbini dəqiq müəyyən edirik."
+        },
+        "parts": {
+          "title": "Keyfiyyətli ehtiyat hissələri",
+          "text": "Yalnız orijinal və ya OEM standartlı hissələrdən istifadə edirik."
+        },
+        "expertise": {
+          "title": "Sənaye təcrübəsi",
+          "text": "Tikinti, mədən və infrastruktur sektorlarının tələblərini yaxından tanıyırıq."
+        },
+        "reliability": {
+          "title": "Etibarlı həllər",
+          "text": "Gördüyümüz işə zəmanət veririk və nəticənin arxasında dururuq."
+        }
+      }
+    },
+    "stats": {
+      "years": "İl təcrübə",
+      "machines": "Təmir olunmuş texnika",
+      "support": "Texniki dəstək",
+      "team": "Komanda üzvü"
+    },
+    "brands": {
+      "title": "Xidmət göstərdiyimiz brendlər"
+    },
+    "cta": {
+      "title": "Texnikanızın boş dayanması pula başa gəlir",
+      "text": "Kaya Makina avadanlığınızı qısa müddətdə yenidən işə salsın. Bu gün bizimlə əlaqə saxlayın.",
+      "button": "Komandamızla əlaqə"
+    }
+  },
+  "services": {
+    "intro": {
+      "kicker": "Xidmətlər",
+      "title": "Xidmətlərimiz",
+      "lead": "Ağır texnikanın bütün əsas sistemləri üzrə tam servis — bir ünvanda."
+    },
+    "equipmentLabel": "Dəstəklənən texnika",
+    "items": {
+      "excavator": {
+        "title": "Ekskavator təmiri",
+        "short": "Mexaniki diaqnostika, mühərrik və hidravlika təmiri — bir ünvanda.",
+        "description": "Ekskavatorların tam diaqnostikası və təmiri üzrə ixtisaslaşmışıq. Mexaniki nasazlıqlardan mühərrik və hidravlik sistem problemlərinə qədər — texnikanızı zavod parametrlərinə uyğun bərpa edirik.",
+        "bullets": [
+          "Kompüterli mexaniki diaqnostika",
+          "Mühərrik təmiri və əsaslı bərpa",
+          "Hidravlik sistemin təmiri",
+          "İş avadanlığının bərpası"
+        ],
+        "equipment": "Caterpillar, Komatsu, Hitachi, Volvo, Doosan, Hyundai və digər markalı tırtıllı və təkərli ekskavatorlar"
+      },
+      "maintenance": {
+        "title": "Ağır texnikaya texniki xidmət",
+        "short": "Planlı xidmət, texnika parkı dəstəyi və profilaktik yoxlamalar.",
+        "description": "Planlı texniki xidmət gözlənilməz dayanmaların qarşısını alır. Texnika parkınız üçün fərdi xidmət qrafiki qurur, filtr-yağ dəyişimindən tam yoxlamalara qədər bütün işləri sənədləşdiririk.",
+        "bullets": [
+          "İstehsalçı qrafikinə uyğun planlı xidmət",
+          "Texnika parkları üçün korporativ dəstək",
+          "Profilaktik yoxlamalar və hesabatlıq",
+          "Yağ və filtr analizləri"
+        ],
+        "equipment": "Bütün növ tikinti və mədən texnikası parkları"
+      },
+      "hydraulics": {
+        "title": "Hidravlik sistemlər",
+        "short": "Nasos, silindr və klapanların təmiri və bərpası.",
+        "description": "Hidravlika ağır texnikanın ürəyidir. Nasosların, silindrlərin, klapanların və hidromotorların diaqnostikası, təmiri və sınağı üçün lazımi avadanlığa sahibik.",
+        "bullets": [
+          "Hidravlik nasosların təmiri",
+          "Silindrlərin bərpası və kipləşdirmə dəstləri",
+          "Klapan bloklarının tənzimlənməsi",
+          "Şlanq və boru xətlərinin dəyişdirilməsi"
+        ],
+        "equipment": "Ekskavator, yükləyici, buldozer və digər hidravlik sistemli maşınlar"
+      },
+      "engine": {
+        "title": "Mühərrik və transmissiya",
+        "short": "Dizel mühərriklərin və transmissiyaların əsaslı təmiri.",
+        "description": "Dizel mühərriklərin və güc ötürücülərinin diaqnostikası, cari və əsaslı təmiri. İşləri zavod tolerantlarına uyğun yerinə yetirir, sınaqdan keçirilmiş texnika təhvil veririk.",
+        "bullets": [
+          "Mühərrikin əsaslı təmiri",
+          "Transmissiya və sürətlər qutusunun təmiri",
+          "Yanacaq sisteminin diaqnostikası",
+          "Turbokompressor xidməti"
+        ],
+        "equipment": "Caterpillar tipli və digər sənaye dizel mühərrikləri"
+      },
+      "field": {
+        "title": "Səyyar xidmət",
+        "short": "İş sahəsində operativ təmir və təcili dəstək.",
+        "description": "Texnika hər zaman emalatxanaya gətirilə bilmir. Səyyar servis briqadalarımız lazımi alət və ehtiyat hissələri ilə birbaşa obyektinizə gələrək təmiri yerində icra edir.",
+        "bullets": [
+          "Obyektdə diaqnostika və təmir",
+          "Təcili çağırış üzrə operativ dəstək",
+          "Təchiz olunmuş səyyar servis avtomobilləri",
+          "Regionlara xidmət"
+        ],
+        "equipment": "Bütün növ özüyeriyən tikinti və mədən texnikası"
+      },
+      "parts": {
+        "title": "Ehtiyat hissələri və texniki dəstək",
+        "short": "Keyfiyyətli hissələrin təchizatı və mütəxəssis məsləhəti.",
+        "description": "Orijinal və OEM standartlı ehtiyat hissələrinin operativ təchizatını təşkil edir, düzgün seçimdə texniki dəstək göstəririk. Ehtiyat hissə və quraşdırma xidmətini bir yerdə təqdim edirik.",
+        "bullets": [
+          "Orijinal və OEM hissələrin təchizatı",
+          "Filtr, yağ və sərf materialları",
+          "Texniki konsultasiya",
+          "Quraşdırma və zəmanət"
+        ],
+        "equipment": "Bütün əsas markaların ağır texnikası"
+      }
+    }
+  },
+  "equipment": {
+    "intro": {
+      "kicker": "Texnika kataloqu",
+      "title": "Xidmət göstərdiyimiz texnika",
+      "lead": "Tikinti, mədən və infrastruktur sektorlarında istifadə olunan bütün əsas ağır texnika növlərinə xidmət göstəririk."
+    },
+    "note": "Siyahıda olmayan texnikanız var? Bizimlə əlaqə saxlayın — qreyder, kran, asfaltdöşəyən və digər xüsusi texnika üzrə də xidmət təklif edirik.",
+    "categories": {
+      "excavators": {
+        "name": "Ekskavatorlar",
+        "description": "Tırtıllı və təkərli ekskavatorların tam diaqnostikası, təmiri və texniki xidməti.",
+        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+      },
+      "loaders": {
+        "name": "Yükləyicilər",
+        "description": "Frontal və teleskopik yükləyicilərin mühərrik, transmissiya və hidravlika təmiri.",
+        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+      },
+      "dozers": {
+        "name": "Buldozerlər",
+        "description": "Buldozerlərin yürüş hissəsi, güc ötürücüsü və iş avadanlığının bərpası.",
+        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+      },
+      "trucks": {
+        "name": "Karyer texnikası",
+        "description": "Karyer samosvalları və mədən texnikasının ağır iş rejiminə davamlı xidməti.",
+        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+      }
+    }
+  },
+  "projects": {
+    "intro": {
+      "kicker": "Layihələr",
+      "title": "İşlərimizdən nümunələr",
+      "lead": "Emalatxana təmirlərindən sahə xidmətinə qədər — gündəlik işimizdən kadrlar."
+    },
+    "note": "Qalereya nümunə xarakterlidir və yeni layihə fotoları ilə mütəmadi yenilənəcək.",
+    "captions": {
+      "g01": "Mədən sahəsində ekskavator",
+      "g02": "Gün batımında iş meydançası",
+      "g03": "Qaynaq işləri — emalatxana",
+      "g04": "Yeraltı karxanada yükləyici",
+      "g05": "Tikinti meydançasında kranlar",
+      "g06": "Mühərrik təmiri prosesi",
+      "g07": "Yürüş hissəsinin bərpası",
+      "g08": "Obyektdə ağır texnika"
+    }
+  },
+  "about": {
+    "intro": {
+      "kicker": "Haqqımızda",
+      "title": "Kaya Makina",
+      "lead": "Bakıda fəaliyyət göstərən, ağır texnikanın təmiri və texniki xidməti üzrə ixtisaslaşmış mühəndislik komandası."
+    },
+    "story": {
+      "kicker": "Tariximiz",
+      "title": "Təcrübədən doğan etibar",
+      "p1": "Kaya Makina ağır texnika sektorunda illərin sahə təcrübəsi üzərində qurulub. Kiçik bir emalatxanadan başlayan yolumuz bu gün ekskavatorlardan mədən texnikasına qədər geniş spektrli maşınlara xidmət göstərən peşəkar servis mərkəzinə çevrilib.",
+      "p2": "Bu gün tikinti şirkətlərindən infrastruktur podratçılarına qədər müştərilərimizin texnika parklarını işlək vəziyyətdə saxlayırıq. Hər təmirə mühəndis dəqiqliyi ilə yanaşır, nəticəyə zəmanət veririk."
+    },
+    "mission": {
+      "title": "Missiyamız",
+      "text": "Müştərilərimizin ağır texnikasının boş dayanma müddətini minimuma endirmək — peşəkar diaqnostika, keyfiyyətli təmir və operativ sahə dəstəyi ilə."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "text": "Azərbaycanda ağır texnika servisində ilk seçim olmaq və beynəlxalq standartlı xidməti yerli bazara daşımaq."
+    },
+    "approach": {
+      "kicker": "Yanaşmamız",
+      "title": "Mühəndislik yanaşması",
+      "lead": "Hər təmir dörd prinsip üzərində qurulur.",
+      "points": {
+        "diagnostics": {
+          "title": "Əvvəlcə dəqiq diaqnoz",
+          "text": "Nasazlığın kök səbəbini tapmadan təmirə başlamırıq."
+        },
+        "parts": {
+          "title": "Düzgün hissə, düzgün alət",
+          "text": "Orijinal/OEM hissələr və kalibrlənmiş avadanlıqla işləyirik."
+        },
+        "safety": {
+          "title": "Təhlükəsizlik öncədir",
+          "text": "Bütün işlər sənaye təhlükəsizlik standartlarına uyğun aparılır."
+        },
+        "transparency": {
+          "title": "Şəffaf proses",
+          "text": "Qiymət, müddət və görülən işlər barədə tam hesabatlıq."
+        }
+      }
+    },
+    "team": {
+      "kicker": "Komanda",
+      "title": "Peşəkar komanda",
+      "text": "Komandamız sertifikatlı mexaniklərdən, hidravlika mütəxəssislərindən və sahə mühəndislərindən ibarətdir. Davamlı təlimlərlə biliklərimizi ən yeni texnika nəsillərinə uyğun saxlayırıq."
+    }
+  },
+  "contact": {
+    "intro": {
+      "kicker": "Əlaqə",
+      "title": "Bizimlə əlaqə saxlayın",
+      "lead": "Servis sifarişi, qiymət təklifi və ya texniki sual üçün — komandamız cavab verməyə hazırdır."
+    },
+    "info": {
+      "title": "Əlaqə məlumatları",
+      "addressLabel": "Ünvan",
+      "address": "Bakı, Azərbaycan",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-poçt",
+      "hoursLabel": "İş saatları",
+      "hours": "B.e–Şənbə: 09:00–18:00"
+    },
+    "form": {
+      "title": "Servis sorğusu göndərin",
+      "lead": "Formanı doldurun — qısa müddətdə sizinlə əlaqə saxlayaq.",
+      "fields": {
+        "name": "Ad, soyad",
+        "company": "Şirkət",
+        "phone": "Telefon",
+        "email": "E-poçt",
+        "machine": "Texnikanın növü",
+        "message": "Mesajınız"
+      },
+      "machineOptions": {
+        "excavators": "Ekskavator",
+        "loaders": "Yükləyici",
+        "dozers": "Buldozer",
+        "trucks": "Karyer texnikası",
+        "other": "Digər"
+      },
+      "errors": {
+        "required": "Bu xana mütləqdir",
+        "phone": "Düzgün telefon nömrəsi daxil edin",
+        "email": "Düzgün e-poçt ünvanı daxil edin"
+      },
+      "submit": "Göndər",
+      "sending": "Göndərilir…",
+      "success": "Sorğunuz qəbul edildi. Tezliklə sizinlə əlaqə saxlayacağıq.",
+      "error": "Xəta baş verdi. Zəhmət olmasa telefonla və ya WhatsApp ilə əlaqə saxlayın.",
+      "fallbackNote": "Form hazırda e-poçt proqramınız vasitəsilə göndərilir. Birbaşa əlaqə üçün telefon və ya WhatsApp-dan da istifadə edə bilərsiniz.",
+      "mailSubject": "Servis sorğusu — kaya-makina.com"
+    },
+    "map": {
+      "title": "Xəritədə yerimiz",
+      "placeholder": "Google Maps xəritəsi tezliklə əlavə olunacaq. Ünvan: Bakı, Azərbaycan."
+    }
+  },
+  "footer": {
+    "blurb": "Ekskavator və ağır tikinti texnikasının peşəkar təmiri, texniki xidməti və sahə dəstəyi. Bakı, Azərbaycan.",
+    "quickLinks": "Faydalı keçidlər",
+    "rights": "Bütün hüquqlar qorunur.",
+    "location": "Bakı · Azərbaycan"
+  }
+}

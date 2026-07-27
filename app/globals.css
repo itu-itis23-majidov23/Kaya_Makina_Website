@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand yellow — sampled from the Kaya Makina logo (#E7A51E) */
+  --color-brand-300: #f3c568;
+  --color-brand-400: #eeb43e;
+  --color-brand-500: #e7a51e;
+  --color-brand-600: #c98d12;
+  --color-brand-700: #a3720d;
+
+  /* Charcoal ink scale around the logo charcoal (#202020) */
+  --color-ink-950: #161616;
+  --color-ink-900: #202020;
+  --color-ink-800: #2b2b2b;
+  --color-ink-700: #3a3a3a;
+  --color-ink-600: #4f4f4f;
+  --color-ink-500: #6b6b6b;
+  --color-ink-400: #8a8a8a;
+  --color-ink-300: #b8b8b8;
+  --color-ink-200: #d6d6d6;
+  --color-ink-100: #e8e8e8;
+
+  /* Page background — logo off-white */
+  --color-paper: #f0f0f0;
+
+  --font-display: var(--font-oswald), var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ---- Industrial visual vocabulary ---- */
+
+/* Clipped bottom-right corner (buttons, chips) */
+@utility clip-corner {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%
+  );
+}
+
+/* Larger clip for cards / media blocks */
+@utility clip-corner-lg {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 22px),
+    calc(100% - 22px) 100%,
+    0 100%
+  );
+}
+
+/* Hazard-stripe accent bar — use sparingly */
+@utility hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-brand-500) 0 14px,
+    var(--color-ink-950) 14px 28px
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+  /* keep anchored sections clear of the sticky header */
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
