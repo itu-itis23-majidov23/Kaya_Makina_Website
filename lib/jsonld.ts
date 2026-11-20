@@ -1,4 +1,4 @@
-import { EMAIL, PHONE_TEL, PHONES, SITE_URL } from "./site";
+import { EMAIL, GEO, MAPS_LINK, PHONE_TEL, PHONES, SITE_URL } from "./site";
 
 // LocalBusiness structured data, rendered once per page in the locale layout.
 export function localBusinessJsonLd(locale: string) {
@@ -17,11 +17,20 @@ export function localBusinessJsonLd(locale: string) {
       contactType: "customer service",
     })),
     email: EMAIL,
+    // No street address exists for the site; locality, district and the
+    // coordinates of the gate are what is known.
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Baku",
+      addressLocality: "Masazır",
+      addressRegion: "Abşeron",
       addressCountry: "AZ",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: GEO.latitude,
+      longitude: GEO.longitude,
+    },
+    hasMap: MAPS_LINK,
     areaServed: "Azerbaijan",
     openingHours: "Mo-Sa 09:00-18:00",
     description:

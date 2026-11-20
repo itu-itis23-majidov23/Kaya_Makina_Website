@@ -20,8 +20,32 @@ export const EMAIL = "info@kayamakina.az"; // TODO confirm the mailbox exists (t
 // contact form shows a call/WhatsApp fallback instead of submitting.
 export const FORMSPREE_URL: string | null = null;
 
-// TODO: paste the Google Maps embed URL for the workshop location.
-export const MAPS_EMBED_URL: string | null = null;
+// Workshop location: the pin the company shared on Google Maps. The place
+// has no street address, so the Plus Code is the precise locator. The
+// written address lives in messages/*.json (contact.info.address).
+export const GEO = { latitude: 40.4946743, longitude: 49.7276531 } as const;
+// Written with Google's Latin locality name so it resolves when typed into Google Maps.
+export const PLUS_CODE = "FPVH+V2G Masazir";
+
+/** The company's own Google Maps share link for the pin. */
+export const MAPS_LINK = "https://maps.app.goo.gl/hNU6mfiMCb6LNgrc6";
+
+/** Opens directions to the pin in Google Maps (app or web). */
+export const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${GEO.latitude},${GEO.longitude}`;
+
+// Google Maps interface language for each site locale.
+const MAPS_LANGUAGE: Record<string, string> = {
+  az: "az",
+  en: "en",
+  ru: "ru",
+  zh: "zh-CN",
+};
+
+/** Keyless Google Maps embed with a marker on the pin, in the visitor's language. */
+export function mapsEmbedUrl(locale: string): string {
+  const hl = MAPS_LANGUAGE[locale] ?? "en";
+  return `https://www.google.com/maps?q=${GEO.latitude},${GEO.longitude}&z=14&hl=${hl}&output=embed`;
+}
 
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 

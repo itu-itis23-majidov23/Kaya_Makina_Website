@@ -249,22 +249,42 @@
       "excavators": {
         "name": "Excavators",
         "description": "Engine, hydraulic system, pump and reducer repair, diagnostics and regular servicing.",
-        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+        "services": [
+          "Diagnostics",
+          "Repair",
+          "Maintenance",
+          "Spare parts"
+        ]
       },
       "loaders": {
         "name": "Loaders",
         "description": "Engine, transmission and gearbox, hydraulic and electrical repair, with regular servicing.",
-        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+        "services": [
+          "Diagnostics",
+          "Repair",
+          "Maintenance",
+          "Spare parts"
+        ]
       },
       "dozers": {
         "name": "Bulldozers",
         "description": "Engine and transmission overhaul, hydraulic repair, diagnostics and maintenance.",
-        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+        "services": [
+          "Diagnostics",
+          "Repair",
+          "Maintenance",
+          "Spare parts"
+        ]
       },
       "other": {
         "name": "Other equipment",
         "description": "Other construction equipment and industrial vehicles — tell us what you run and we will tell you how we can help.",
-        "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
+        "services": [
+          "Diagnostics",
+          "Repair",
+          "Maintenance",
+          "Spare parts"
+        ]
       }
     },
     "brands": {
@@ -370,7 +390,7 @@
     "info": {
       "title": "Contact details",
       "addressLabel": "Address",
-      "address": "Baku, Azerbaijan",
+      "address": "Masazir, Absheron District, Azerbaijan",
       "phoneLabel": "Phone",
       "emailLabel": "Email",
       "hoursLabel": "Working hours",
@@ -407,14 +427,16 @@
     },
     "map": {
       "title": "Find us on the map",
-      "placeholder": "Google Maps will be added soon. Address: Baku, Azerbaijan."
+      "directions": "Get directions",
+      "open": "Open in Google Maps",
+      "iframeTitle": "Map: location of the Kaya Makina workshop"
     }
   },
   "footer": {
-    "blurb": "Maintenance, repair and technical servicing of heavy machinery and construction equipment, and spare parts supply. Baku, Azerbaijan.",
+    "blurb": "Maintenance, repair and technical servicing of heavy machinery and construction equipment, and spare parts supply. Masazir, Absheron District.",
     "quickLinks": "Quick links",
     "rights": "All rights reserved.",
-    "location": "Baku · Azerbaijan",
+    "location": "Masazir · Azerbaijan",
     "disclaimer": "Kaya Makina is an independent service company and is not affiliated with, endorsed by, or authorized by Caterpillar Inc. or any other equipment manufacturer. All brand names and trademarks are the property of their respective owners and are used for identification purposes only."
   }
 }

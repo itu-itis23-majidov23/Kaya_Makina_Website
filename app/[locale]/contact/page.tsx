@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactForm from "@/components/contact/ContactForm";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import Button from "@/components/ui/Button";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
-import { EMAIL, MAPS_EMBED_URL, PHONES } from "@/lib/site";
+import {
+  EMAIL,
+  MAPS_DIRECTIONS_URL,
+  MAPS_LINK,
+  PHONES,
+  PLUS_CODE,
+  mapsEmbedUrl,
+} from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -31,7 +39,11 @@ export default async function ContactPage({ params }: Props) {
       lines: PHONES.map(({ display, tel }) => ({ text: display, href: `tel:${tel}` })),
     },
     { icon: Mail, label: t("info.emailLabel"), lines: [{ text: EMAIL, href: `mailto:${EMAIL}` }] },
-    { icon: MapPin, label: t("info.addressLabel"), lines: [{ text: t("info.address") }] },
+    {
+      icon: MapPin,
+      label: t("info.addressLabel"),
+      lines: [{ text: t("info.address"), href: MAPS_LINK }],
+    },
     { icon: Clock, label: t("info.hoursLabel"), lines: [{ text: t("info.hours") }] },
   ];
 
@@ -68,6 +80,8 @@ export default async function ContactPage({ params }: Props) {
                         <a
                           key={text}
                           href={href}
+                          target={href.startsWith("http") ? "_blank" : undefined}
+                          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="mt-1 block break-words text-[0.9375rem] font-medium text-fg transition-colors hover:text-brand-bright"
                         >
                           {text}
@@ -106,24 +120,40 @@ export default async function ContactPage({ params }: Props) {
       <section className="border-t border-line bg-surface py-16 lg:py-20">
         <div className="shell">
           <Reveal>
-            {MAPS_EMBED_URL ? (
+            <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+              <div className="max-w-2xl">
+                <h2 className="font-display text-2xl font-bold tracking-[-0.02em]">
+                  {t("map.title")}
+                </h2>
+                <p className="mt-3 text-muted">{t("info.address")}</p>
+                {/* There is no street address; the Plus Code finds the gate. */}
+                <p className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="label">Plus Code</span>
+                  <span className="font-mono text-sm text-fg">{PLUS_CODE}</span>
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Button href={MAPS_DIRECTIONS_URL}>
+                  <Navigation className="h-4 w-4" aria-hidden />
+                  {t("map.directions")}
+                </Button>
+                <Button href={MAPS_LINK} variant="outline">
+                  {t("map.open")}
+                  <ArrowUpRight className="h-4 w-4 text-brand" aria-hidden />
+                </Button>
+              </div>
+            </div>
+
+            <div className="mt-8 overflow-hidden rounded-xl border border-line bg-bg">
               <iframe
-                src={MAPS_EMBED_URL}
-                title={t("map.title")}
+                src={mapsEmbedUrl(locale)}
+                title={t("map.iframeTitle")}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="h-96 w-full rounded-xl border border-line"
+                allowFullScreen
+                className="block h-[22rem] w-full border-0 sm:h-[26rem]"
               />
-            ) : (
-              // TODO: set MAPS_EMBED_URL in lib/site.ts to replace this placeholder.
-              <div className="flex h-72 w-full flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-line-strong bg-bg px-6 text-center">
-                <MapPin className="h-8 w-8 text-brand" strokeWidth={1.75} aria-hidden />
-                <p className="font-display text-lg font-semibold tracking-[-0.01em] text-fg">
-                  {t("map.title")}
-                </p>
-                <p className="max-w-sm text-sm text-muted">{t("map.placeholder")}</p>
-              </div>
-            )}
+            </div>
           </Reveal>
         </div>
       </section>

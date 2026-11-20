@@ -35,12 +35,16 @@ Contact data lives in **`lib/site.ts`** — replace and push:
 | `WHATSAPP_NUMBER` | `994504145258` (same as the phone) | confirm WhatsApp is on this number |
 | `EMAIL` | `info@kayamakina.az` | confirm the mailbox or alias exists |
 | `FORMSPREE_URL` | `null` (form opens the visitor's email client) | Formspree endpoint, e.g. `https://formspree.io/f/xxxx` |
-| `MAPS_EMBED_URL` | `null` (placeholder box shown) | Google Maps embed URL |
 
 Also review:
 
-- **Address and working hours**: `contact.info.address` / `contact.info.hours`
-  in each `messages/*.json`, and `openingHours` in `lib/jsonld.ts`.
+- **Working hours**: `contact.info.hours` in each `messages/*.json`, and
+  `openingHours` in `lib/jsonld.ts` (Mon–Sat 09:00–18:00 is unconfirmed).
+- **Location**: the workshop is in Masazır (Absheron District), at the pin
+  the company shared on Google Maps. Coordinates, Plus Code and map links
+  are in `lib/site.ts`; the written address is `contact.info.address` in
+  each messages file. There is no street address. Headlines and page titles
+  still say "Baku" — decide whether that stays.
 - **Service details**: the eight services come from the company's activity
   description; the bullet points under each one (`services.items.*.bullets`)
   spell that description out and should be checked by someone at the company.

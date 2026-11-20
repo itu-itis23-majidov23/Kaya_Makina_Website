@@ -249,22 +249,42 @@
       "excavators": {
         "name": "Ekskavatorlar",
         "description": "Mühərrik, hidravlik sistem, nasos və reduktor təmiri, diaqnostika və mütəmadi texniki xidmət.",
-        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+        "services": [
+          "Diaqnostika",
+          "Təmir",
+          "Texniki xidmət",
+          "Ehtiyat hissələri"
+        ]
       },
       "loaders": {
         "name": "Yükləyicilər",
         "description": "Mühərrik, transmissiya və sürətlər qutusu, hidravlika və elektrik təmiri, mütəmadi texniki xidmət.",
-        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+        "services": [
+          "Diaqnostika",
+          "Təmir",
+          "Texniki xidmət",
+          "Ehtiyat hissələri"
+        ]
       },
       "dozers": {
         "name": "Buldozerlər",
         "description": "Mühərrik və transmissiyanın əsaslı təmiri, hidravlika təmiri, diaqnostika və texniki xidmət.",
-        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+        "services": [
+          "Diaqnostika",
+          "Təmir",
+          "Texniki xidmət",
+          "Ehtiyat hissələri"
+        ]
       },
       "other": {
         "name": "Digər texnika",
         "description": "Digər tikinti texnikası və sənaye nəqliyyat vasitələri — texnikanızı bildirin, necə kömək edə biləcəyimizi deyək.",
-        "services": ["Diaqnostika", "Təmir", "Texniki xidmət", "Ehtiyat hissələri"]
+        "services": [
+          "Diaqnostika",
+          "Təmir",
+          "Texniki xidmət",
+          "Ehtiyat hissələri"
+        ]
       }
     },
     "brands": {
@@ -370,7 +390,7 @@
     "info": {
       "title": "Əlaqə məlumatları",
       "addressLabel": "Ünvan",
-      "address": "Bakı, Azərbaycan",
+      "address": "Masazır, Abşeron rayonu, Azərbaycan",
       "phoneLabel": "Telefon",
       "emailLabel": "E-poçt",
       "hoursLabel": "İş saatları",
@@ -407,14 +427,16 @@
     },
     "map": {
       "title": "Xəritədə yerimiz",
-      "placeholder": "Google Maps xəritəsi tezliklə əlavə olunacaq. Ünvan: Bakı, Azərbaycan."
+      "directions": "Marşrut qur",
+      "open": "Google Maps-də aç",
+      "iframeTitle": "Xəritə: Kaya Makina emalatxanasının yeri"
     }
   },
   "footer": {
-    "blurb": "Ağır texnikanın və tikinti texnikasının texniki xidməti, təmiri və servisi, ehtiyat hissələrinin təchizatı. Bakı, Azərbaycan.",
+    "blurb": "Ağır texnikanın və tikinti texnikasının texniki xidməti, təmiri və servisi, ehtiyat hissələrinin təchizatı. Masazır, Abşeron rayonu.",
     "quickLinks": "Faydalı keçidlər",
     "rights": "Bütün hüquqlar qorunur.",
-    "location": "Bakı · Azərbaycan",
+    "location": "Masazır · Azərbaycan",
     "disclaimer": "Kaya Makina müstəqil servis şirkətidir; Caterpillar Inc. və ya hər hansı digər texnika istehsalçısı ilə əlaqəli deyil və onlar tərəfindən səlahiyyətləndirilməyib. Bütün brend adları və əmtəə nişanları müvafiq sahiblərinə məxsusdur və yalnız identifikasiya məqsədilə istifadə olunur."
   }
 }
