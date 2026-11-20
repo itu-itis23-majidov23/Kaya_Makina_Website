@@ -79,7 +79,14 @@ messages files.
 ## Hosting — Cloudflare
 
 The site is a **Cloudflare Worker with static assets**: Cloudflare serves the
-`out/` folder; there is no server code. Configuration is in `wrangler.jsonc`.
+`out/` folder. Configuration is in `wrangler.jsonc`.
+
+The only server code is `worker/video-range.js`, which handles requests under
+`/video/`. Cloudflare's asset server cannot send part of a file, and Safari on
+iPhone and Mac will not play a video unless the server can — the script adds
+that. Every other URL is served straight from the asset store.
+`public/_headers` lets browsers cache the hashed files under `/_next/static/`
+for a year.
 
 - **Deploys:** the GitHub repo is connected to the Worker (Workers Builds), so
   **every push to `main` deploys**. Cloudflare installs dependencies, then
@@ -97,9 +104,13 @@ The site is a **Cloudflare Worker with static assets**: Cloudflare serves the
   the DNS records and certificates.
 - **Email:** the zone has Google MX/SPF records, so mail for
   `@kayamakina.az` is handled by Google, not by this site.
-- **Manual deploy** (rarely needed): `npx wrangler deploy`. Wrangler needs
-  Node 22.12 or newer and a login to the Cloudflare account that owns the
-  Worker (`npx wrangler login`).
+- **Manual deploy:** `npx wrangler deploy` builds and publishes in one step.
+  Wrangler needs Node 22.12 or newer and a login to the Cloudflare account
+  that owns the Worker. To keep another Cloudflare login intact, use a named
+  profile: `npx wrangler auth create <name>`, then
+  `npx wrangler auth activate <name>` in this folder.
+- **Check after a deploy:** `curl -I -H "Range: bytes=0-1"
+  https://kayamakina.az/video/test-run.mp4` must answer `206`.
 
 `public/_redirects` sends `/` to `/az/` (302 — change to 301 once the launch
 is settled). `out/index.html` also carries a meta-refresh fallback.
