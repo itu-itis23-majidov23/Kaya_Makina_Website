@@ -2,7 +2,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SERVICES } from "@/lib/content";
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { EMAIL, PHONES } from "@/lib/site";
 import Logo from "./Logo";
 
 const NAV = [
@@ -69,11 +69,15 @@ export default function Footer() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
               {tContact("address")}
             </li>
-            <li>
-              <a href={`tel:${PHONE_TEL}`} className={`flex items-center gap-2.5 ${link}`}>
-                <Phone className="h-4 w-4 shrink-0 text-brand" aria-hidden />
-                {PHONE_DISPLAY}
-              </a>
+            <li className="flex items-start gap-2.5">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+              <span className="flex flex-col gap-1.5">
+                {PHONES.map(({ display, tel }) => (
+                  <a key={tel} href={`tel:${tel}`} className={link}>
+                    {display}
+                  </a>
+                ))}
+              </span>
             </li>
             <li>
               <a href={`mailto:${EMAIL}`} className={`flex items-center gap-2.5 ${link}`}>

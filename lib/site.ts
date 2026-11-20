@@ -4,8 +4,14 @@
 export const SITE_URL = "https://kayamakina.az";
 export const COMPANY = "Kaya Makina";
 
-export const PHONE_DISPLAY = "+994 50 414 52 58";
-export const PHONE_TEL = "+994504145258";
+// Phone lines, main one first. Footer, contact page and mobile menu list all
+// of them; single buttons and WhatsApp use the main one.
+export const PHONES = [
+  { display: "+994 50 414 52 58", tel: "+994504145258" },
+  { display: "+994 50 414 57 52", tel: "+994504145752" },
+] as const;
+export const PHONE_DISPLAY = PHONES[0].display;
+export const PHONE_TEL = PHONES[0].tel;
 export const WHATSAPP_NUMBER = "994504145258"; // digits only; assumed to be the same line as the phone
 export const EMAIL = "info@kayamakina.az"; // TODO confirm the mailbox exists (the domain's mail is on Google)
 

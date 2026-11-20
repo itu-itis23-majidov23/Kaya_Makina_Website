@@ -1,4 +1,4 @@
-import { EMAIL, PHONE_TEL, SITE_URL } from "./site";
+import { EMAIL, PHONE_TEL, PHONES, SITE_URL } from "./site";
 
 // LocalBusiness structured data, rendered once per page in the locale layout.
 export function localBusinessJsonLd(locale: string) {
@@ -11,6 +11,11 @@ export function localBusinessJsonLd(locale: string) {
     logo: `${SITE_URL}/logo.jpg`,
     image: `${SITE_URL}/og/og-cover.jpg`,
     telephone: PHONE_TEL,
+    contactPoint: PHONES.map(({ tel }) => ({
+      "@type": "ContactPoint",
+      telephone: tel,
+      contactType: "customer service",
+    })),
     email: EMAIL,
     address: {
       "@type": "PostalAddress",

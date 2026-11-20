@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { PHONES } from "@/lib/site";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Logo from "./Logo";
 
@@ -120,14 +120,17 @@ export default function Header() {
                 );
               })}
             </ul>
-            <div className="mt-8 flex items-center justify-between gap-4">
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="flex items-center gap-2.5 text-sm font-medium text-fg"
-              >
-                <Phone className="h-4 w-4 text-brand" aria-hidden />
-                {PHONE_DISPLAY}
-              </a>
+            <div className="mt-8 flex items-start justify-between gap-4">
+              <div className="flex items-start gap-2.5 text-sm font-medium text-fg">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                <span className="flex flex-col gap-2">
+                  {PHONES.map(({ display, tel }) => (
+                    <a key={tel} href={`tel:${tel}`}>
+                      {display}
+                    </a>
+                  ))}
+                </span>
+              </div>
               <LocaleSwitcher />
             </div>
             <Link

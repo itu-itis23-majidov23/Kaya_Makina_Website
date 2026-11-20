@@ -5,7 +5,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
-import { EMAIL, MAPS_EMBED_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { EMAIL, MAPS_EMBED_URL, PHONES } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -20,12 +20,20 @@ export default async function ContactPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("contact");
 
-  const INFO = [
-    { icon: Phone, label: t("info.phoneLabel"), value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}` },
-    { icon: Mail, label: t("info.emailLabel"), value: EMAIL, href: `mailto:${EMAIL}` },
-    { icon: MapPin, label: t("info.addressLabel"), value: t("info.address"), href: null },
-    { icon: Clock, label: t("info.hoursLabel"), value: t("info.hours"), href: null },
-  ] as const;
+  const INFO: {
+    icon: typeof Phone;
+    label: string;
+    lines: { text: string; href?: string }[];
+  }[] = [
+    {
+      icon: Phone,
+      label: t("info.phoneLabel"),
+      lines: PHONES.map(({ display, tel }) => ({ text: display, href: `tel:${tel}` })),
+    },
+    { icon: Mail, label: t("info.emailLabel"), lines: [{ text: EMAIL, href: `mailto:${EMAIL}` }] },
+    { icon: MapPin, label: t("info.addressLabel"), lines: [{ text: t("info.address") }] },
+    { icon: Clock, label: t("info.hoursLabel"), lines: [{ text: t("info.hours") }] },
+  ];
 
   return (
     <>
@@ -45,7 +53,7 @@ export default async function ContactPage({ params }: Props) {
               {t("info.title")}
             </h2>
             <ul className="mt-8 overflow-hidden rounded-xl border border-line">
-              {INFO.map(({ icon: Icon, label, value, href }) => (
+              {INFO.map(({ icon: Icon, label, lines }) => (
                 <li
                   key={label}
                   className="flex items-center gap-4 border-b border-line bg-surface px-5 py-4 last:border-b-0"
@@ -55,15 +63,20 @@ export default async function ContactPage({ params }: Props) {
                   </span>
                   <div className="min-w-0">
                     <p className="label">{label}</p>
-                    {href ? (
-                      <a
-                        href={href}
-                        className="mt-1 block break-words text-[0.9375rem] font-medium text-fg transition-colors hover:text-brand-bright"
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="mt-1 text-[0.9375rem] font-medium text-fg">{value}</p>
+                    {lines.map(({ text, href }) =>
+                      href ? (
+                        <a
+                          key={text}
+                          href={href}
+                          className="mt-1 block break-words text-[0.9375rem] font-medium text-fg transition-colors hover:text-brand-bright"
+                        >
+                          {text}
+                        </a>
+                      ) : (
+                        <p key={text} className="mt-1 text-[0.9375rem] font-medium text-fg">
+                          {text}
+                        </p>
+                      ),
                     )}
                   </div>
                 </li>
