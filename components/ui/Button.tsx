@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 
-type Variant = "primary" | "dark" | "outline" | "outline-dark";
+type Variant = "primary" | "outline";
 type Size = "md" | "lg";
 
 type Props = {
@@ -15,19 +15,14 @@ type Props = {
 };
 
 const VARIANTS: Record<Variant, string> = {
-  primary: "bg-brand-500 text-ink-950 hover:bg-brand-600",
-  dark: "bg-ink-950 text-white hover:bg-ink-700",
-  // for dark backgrounds
+  primary: "bg-brand text-bg hover:bg-brand-bright",
   outline:
-    "border-2 border-white/70 text-white hover:border-brand-500 hover:text-brand-400",
-  // for light backgrounds
-  "outline-dark":
-    "border-2 border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-white",
+    "border border-line-strong bg-bg/40 text-fg hover:border-brand hover:text-brand-bright",
 };
 
 const SIZES: Record<Size, string> = {
-  md: "px-6 py-3 text-sm",
-  lg: "px-8 py-4 text-base",
+  md: "h-11 px-5 text-sm",
+  lg: "h-12 px-6 text-[0.9375rem]",
 };
 
 export default function Button({
@@ -39,7 +34,7 @@ export default function Button({
   type = "button",
   disabled,
 }: Props) {
-  const cls = `clip-corner inline-flex items-center justify-center gap-2 font-display font-semibold uppercase tracking-wider transition-colors ${VARIANTS[variant]} ${SIZES[size]} ${disabled ? "cursor-not-allowed opacity-50" : ""} ${className}`;
+  const cls = `group/btn inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors duration-200 ${VARIANTS[variant]} ${SIZES[size]} ${disabled ? "cursor-not-allowed opacity-50" : ""} ${className}`;
 
   if (href) {
     const external = /^(https?:|mailto:|tel:)/.test(href);

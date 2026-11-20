@@ -1,19 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import { Mail, Menu, Phone, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, Phone, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 import LocaleSwitcher from "./LocaleSwitcher";
+import Logo from "./Logo";
 
 const NAV = [
-  { key: "home", href: "/" },
   { key: "about", href: "/about" },
   { key: "services", href: "/services" },
   { key: "equipment", href: "/equipment" },
-  { key: "projects", href: "/projects" },
+  { key: "gallery", href: "/gallery" },
   { key: "contact", href: "/contact" },
 ] as const;
 
@@ -23,77 +22,61 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => pathname.startsWith(href);
+
+  // Close the mobile menu on Escape and stop the page scrolling behind it.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink-950 text-white shadow-lg shadow-black/20">
-      {/* Utility bar */}
-      <div className="hidden border-b border-white/10 lg:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6 text-xs text-ink-300">
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="flex items-center gap-1.5 transition-colors hover:text-brand-400"
-            >
-              <Phone className="h-3.5 w-3.5 text-brand-500" aria-hidden />
-              {PHONE_DISPLAY}
-            </a>
-            <a
-              href={`mailto:${EMAIL}`}
-              className="flex items-center gap-1.5 transition-colors hover:text-brand-400"
-            >
-              <Mail className="h-3.5 w-3.5 text-brand-500" aria-hidden />
-              {EMAIL}
-            </a>
-          </div>
-          <LocaleSwitcher />
-        </div>
-      </div>
-
-      {/* Main bar */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="block h-11 w-11 shrink-0 overflow-hidden bg-white p-0.5 clip-corner">
-            <Image
-              src="/logo.jpg"
-              alt=""
-              width={44}
-              height={44}
-              className="h-full w-full object-cover"
-              priority
-            />
-          </span>
-          <span className="leading-none">
-            <span className="block font-display text-xl font-bold uppercase tracking-wide">
-              Kaya <span className="text-brand-500">Makina</span>
-            </span>
-            <span className="mt-0.5 block text-[10px] font-semibold uppercase tracking-[0.3em] text-ink-400">
-              {tCommon("tagline")}
-            </span>
-          </span>
+    <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
+      <div className="shell flex h-16 items-center justify-between gap-4 lg:h-[4.5rem] xl:gap-6">
+        <Link
+          href="/"
+          aria-label="Kaya Makina"
+          onClick={() => setOpen(false)}
+          className="shrink-0"
+        >
+          <Logo tagline={tCommon("tagline")} />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
-          {NAV.map(({ key, href }) => (
-            <Link
-              key={key}
-              href={href}
-              className={`px-3 py-2 font-display text-sm font-medium uppercase tracking-wider transition-colors ${
-                isActive(href)
-                  ? "text-brand-400"
-                  : "text-ink-200 hover:text-white"
-              }`}
-            >
-              {t(key)}
-            </Link>
-          ))}
+        <nav className="hidden h-full items-stretch lg:flex" aria-label="Main">
+          {NAV.map(({ key, href }) => {
+            const active = isActive(href);
+            return (
+              <Link
+                key={key}
+                href={href}
+                aria-current={active ? "page" : undefined}
+                className={`relative flex items-center whitespace-nowrap px-2.5 text-sm font-medium transition-colors xl:px-4 ${
+                  active ? "text-fg" : "text-muted hover:text-fg"
+                }`}
+              >
+                {t(key)}
+                {active && (
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-2.5 -bottom-px h-0.5 bg-brand xl:inset-x-4"
+                  />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex xl:gap-4">
+          <LocaleSwitcher />
           <Link
             href="/contact"
-            className="clip-corner inline-flex items-center bg-brand-500 px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-ink-950 transition-colors hover:bg-brand-600"
+            className="inline-flex h-10 items-center whitespace-nowrap rounded-md bg-brand px-3.5 text-sm font-semibold text-bg transition-colors hover:bg-brand-bright xl:px-4"
           >
             {t("requestService")}
           </Link>
@@ -103,38 +86,46 @@ export default function Header() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           aria-label={t(open ? "closeMenu" : "openMenu")}
-          className="p-2 text-white lg:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-fg lg:hidden"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-6 w-6" aria-hidden /> : <Menu className="h-6 w-6" aria-hidden />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/10 lg:hidden">
-          <nav className="mx-auto max-w-7xl px-4 py-4 sm:px-6" aria-label="Mobile">
-            <ul className="flex flex-col">
-              {NAV.map(({ key, href }) => (
-                <li key={key}>
-                  <Link
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className={`block border-b border-white/5 px-2 py-3 font-display text-base font-medium uppercase tracking-wider ${
-                      isActive(href) ? "text-brand-400" : "text-ink-200"
-                    }`}
-                  >
-                    {t(key)}
-                  </Link>
-                </li>
-              ))}
+        <div
+          id="mobile-menu"
+          className="absolute inset-x-0 top-full h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg lg:hidden"
+        >
+          <nav className="shell flex min-h-full flex-col py-6" aria-label="Mobile">
+            <ul>
+              {[{ key: "home", href: "/" } as const, ...NAV].map(({ key, href }) => {
+                const active = href === "/" ? pathname === "/" : isActive(href);
+                return (
+                  <li key={key} className="border-b border-line">
+                    <Link
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={`flex items-center justify-between py-4 font-display text-xl font-semibold tracking-[-0.01em] ${
+                        active ? "text-brand" : "text-fg"
+                      }`}
+                    >
+                      {t(key)}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
-            <div className="mt-4 flex items-center justify-between gap-4 px-2">
+            <div className="mt-8 flex items-center justify-between gap-4">
               <a
                 href={`tel:${PHONE_TEL}`}
-                className="flex items-center gap-2 text-sm text-ink-300"
+                className="flex items-center gap-2.5 text-sm font-medium text-fg"
               >
-                <Phone className="h-4 w-4 text-brand-500" aria-hidden />
+                <Phone className="h-4 w-4 text-brand" aria-hidden />
                 {PHONE_DISPLAY}
               </a>
               <LocaleSwitcher />
@@ -142,7 +133,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="clip-corner mt-4 flex items-center justify-center bg-brand-500 px-5 py-3 font-display text-sm font-semibold uppercase tracking-wider text-ink-950"
+              className="mt-6 flex h-12 items-center justify-center rounded-md bg-brand text-[0.9375rem] font-semibold text-bg"
             >
               {t("requestService")}
             </Link>

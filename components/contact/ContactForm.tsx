@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Send } from "lucide-react";
+import { ChevronDown, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { EMAIL, FORMSPREE_URL } from "@/lib/site";
 
@@ -20,7 +20,7 @@ const EMPTY: Values = {
   message: "",
 };
 
-const MACHINE_OPTIONS = ["excavators", "loaders", "dozers", "trucks", "other"];
+const MACHINE_OPTIONS = ["excavators", "loaders", "dozers", "other"];
 
 export default function ContactForm() {
   const t = useTranslations("contact.form");
@@ -75,24 +75,29 @@ export default function ContactForm() {
     setStatus("success");
   };
 
+  const labelCls = "mb-2 block text-sm font-medium text-fg";
+
   const inputCls = (field: Field) =>
-    `w-full border bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-400 focus:border-brand-500 ${
-      errors[field] ? "border-red-500" : "border-ink-200"
+    `w-full rounded-md border bg-bg px-4 py-3 text-[0.9375rem] text-fg outline-none transition-colors placeholder:text-dim focus:border-brand ${
+      errors[field] ? "border-red-500" : "border-line-strong"
     }`;
+
+  const describedBy = (field: Field) =>
+    errors[field] ? `cf-${field}-error` : undefined;
 
   const error = (field: Field) =>
     errors[field] ? (
-      <p role="alert" className="mt-1 text-xs font-medium text-red-600">
+      <p id={`cf-${field}-error`} role="alert" className="mt-1.5 text-xs font-medium text-red-400">
         {errors[field]}
       </p>
     ) : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form onSubmit={onSubmit} noValidate className="space-y-5">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="cf-name" className="mb-1.5 block text-sm font-medium text-ink-700">
-            {t("fields.name")} *
+          <label htmlFor="cf-name" className={labelCls}>
+            {t("fields.name")} <span className="text-brand">*</span>
           </label>
           <input
             id="cf-name"
@@ -101,11 +106,13 @@ export default function ContactForm() {
             onChange={(e) => set("name")(e.target.value)}
             className={inputCls("name")}
             autoComplete="name"
+            aria-invalid={!!errors.name}
+            aria-describedby={describedBy("name")}
           />
           {error("name")}
         </div>
         <div>
-          <label htmlFor="cf-company" className="mb-1.5 block text-sm font-medium text-ink-700">
+          <label htmlFor="cf-company" className={labelCls}>
             {t("fields.company")}
           </label>
           <input
@@ -118,8 +125,8 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="cf-phone" className="mb-1.5 block text-sm font-medium text-ink-700">
-            {t("fields.phone")} *
+          <label htmlFor="cf-phone" className={labelCls}>
+            {t("fields.phone")} <span className="text-brand">*</span>
           </label>
           <input
             id="cf-phone"
@@ -129,11 +136,13 @@ export default function ContactForm() {
             className={inputCls("phone")}
             autoComplete="tel"
             placeholder="+994"
+            aria-invalid={!!errors.phone}
+            aria-describedby={describedBy("phone")}
           />
           {error("phone")}
         </div>
         <div>
-          <label htmlFor="cf-email" className="mb-1.5 block text-sm font-medium text-ink-700">
+          <label htmlFor="cf-email" className={labelCls}>
             {t("fields.email")}
           </label>
           <input
@@ -143,33 +152,41 @@ export default function ContactForm() {
             onChange={(e) => set("email")(e.target.value)}
             className={inputCls("email")}
             autoComplete="email"
+            aria-invalid={!!errors.email}
+            aria-describedby={describedBy("email")}
           />
           {error("email")}
         </div>
       </div>
 
       <div>
-        <label htmlFor="cf-machine" className="mb-1.5 block text-sm font-medium text-ink-700">
+        <label htmlFor="cf-machine" className={labelCls}>
           {t("fields.machine")}
         </label>
-        <select
-          id="cf-machine"
-          value={values.machine}
-          onChange={(e) => set("machine")(e.target.value)}
-          className={inputCls("machine")}
-        >
-          <option value="">—</option>
-          {MACHINE_OPTIONS.map((opt) => (
-            <option key={opt} value={t(`machineOptions.${opt}`)}>
-              {t(`machineOptions.${opt}`)}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select
+            id="cf-machine"
+            value={values.machine}
+            onChange={(e) => set("machine")(e.target.value)}
+            className={`${inputCls("machine")} appearance-none pr-11`}
+          >
+            <option value="">—</option>
+            {MACHINE_OPTIONS.map((opt) => (
+              <option key={opt} value={t(`machineOptions.${opt}`)}>
+                {t(`machineOptions.${opt}`)}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-dim"
+            aria-hidden
+          />
+        </div>
       </div>
 
       <div>
-        <label htmlFor="cf-message" className="mb-1.5 block text-sm font-medium text-ink-700">
-          {t("fields.message")} *
+        <label htmlFor="cf-message" className={labelCls}>
+          {t("fields.message")} <span className="text-brand">*</span>
         </label>
         <textarea
           id="cf-message"
@@ -177,6 +194,8 @@ export default function ContactForm() {
           value={values.message}
           onChange={(e) => set("message")(e.target.value)}
           className={inputCls("message")}
+          aria-invalid={!!errors.message}
+          aria-describedby={describedBy("message")}
         />
         {error("message")}
       </div>
@@ -184,24 +203,24 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="clip-corner inline-flex items-center justify-center gap-2 bg-brand-500 px-8 py-3.5 font-display text-sm font-semibold uppercase tracking-wider text-ink-950 transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-brand px-7 text-[0.9375rem] font-semibold text-bg transition-colors hover:bg-brand-bright disabled:cursor-not-allowed disabled:opacity-60"
       >
         <Send className="h-4 w-4" aria-hidden />
         {status === "sending" ? t("sending") : t("submit")}
       </button>
 
       {status === "success" && (
-        <p role="status" className="border-l-4 border-green-600 bg-green-50 px-4 py-3 text-sm text-green-800">
+        <p role="status" className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
           {t("success")}
         </p>
       )}
       {status === "error" && (
-        <p role="alert" className="border-l-4 border-red-600 bg-red-50 px-4 py-3 text-sm text-red-800">
+        <p role="alert" className="rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {t("error")}
         </p>
       )}
       {!FORMSPREE_URL && (
-        <p className="text-xs leading-relaxed text-ink-400">{t("fallbackNote")}</p>
+        <p className="text-xs leading-relaxed text-dim">{t("fallbackNote")}</p>
       )}
     </form>
   );

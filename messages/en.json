@@ -1,324 +1,371 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Us",
+    "about": "About",
     "services": "Services",
     "equipment": "Equipment",
-    "projects": "Projects",
+    "gallery": "Gallery",
     "contact": "Contact",
-    "requestService": "Request Service",
+    "requestService": "Request service",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "skip": "Skip to content"
   },
   "common": {
-    "tagline": "Heavy Machinery Service",
+    "tagline": "Heavy machinery service",
     "learnMore": "Learn more",
     "whatsapp": "Message us on WhatsApp",
     "close": "Close",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "playVideo": "Play video",
+    "pauseVideo": "Pause video"
   },
   "meta": {
     "home": {
-      "title": "Heavy Machinery Service & Repair — Baku",
-      "description": "Kaya Makina — professional repair, maintenance and field support for excavators and construction machinery in Azerbaijan. Independent professional service for all major equipment brands."
+      "title": "Heavy Machinery Repair & Service — Baku",
+      "description": "Kaya Makina repairs and services excavators, loaders and bulldozers in Baku: engines, transmissions, hydraulics, diagnostics and spare parts."
     },
     "about": {
       "title": "About Us",
-      "description": "Kaya Makina's history, mission, vision and engineering approach. A professional heavy machinery service team in Baku."
+      "description": "Kaya Makina is a Baku-based company specializing in the maintenance, repair and technical servicing of heavy machinery and construction equipment."
     },
     "services": {
       "title": "Our Services",
-      "description": "Excavator repair, hydraulic systems, engine and transmission, scheduled maintenance, field service and spare parts."
+      "description": "Engine and transmission overhaul, hydraulics, pump and reducer repair, diagnostics, electrical repair, preventive maintenance and spare parts supply."
     },
     "equipment": {
       "title": "Machines We Service",
-      "description": "Excavators, loaders, bulldozers and mining trucks — diagnostics, repair and maintenance for all major brands."
+      "description": "Excavators, loaders, bulldozers and other construction equipment and industrial vehicles — Caterpillar, Hyundai and other makes."
     },
-    "projects": {
-      "title": "Projects & Gallery",
-      "description": "Workshop repairs, field service and fleet support — examples of Kaya Makina's work."
+    "gallery": {
+      "title": "Workshop Gallery",
+      "description": "Photos and video from the Kaya Makina workshop: engine overhauls, test runs, units and the machines we work on."
     },
     "contact": {
       "title": "Contact",
-      "description": "Contact Kaya Makina for service requests and quotes. Baku, Azerbaijan. Phone, email and WhatsApp."
+      "description": "Contact Kaya Makina for service requests, spare parts and quotes. Baku, Azerbaijan. Phone, email and WhatsApp."
     }
   },
   "home": {
     "hero": {
-      "kicker": "Professional Service Center · Baku",
-      "title": "Heavy machinery service you can trust",
-      "subtitle": "Kaya Makina provides expert repair, maintenance and technical support services for excavators and construction machinery in Azerbaijan.",
-      "secondary": "Our Services"
+      "kicker": "Heavy machinery service · Baku",
+      "title": "Complete service for heavy machinery",
+      "subtitle": "Kaya Makina repairs engines, transmissions and hydraulic systems of excavators, loaders and bulldozers, carries out diagnostics and maintenance, and supplies spare parts.",
+      "secondary": "Our services"
+    },
+    "plate": {
+      "items": {
+        "workshop": {
+          "label": "Workshop",
+          "value": "Covered hall with an overhead crane"
+        },
+        "repair": {
+          "label": "Repair & overhaul",
+          "value": "Engines, transmissions, hydraulics"
+        },
+        "diagnostics": {
+          "label": "Diagnostics",
+          "value": "Mechanical and electronic"
+        },
+        "parts": {
+          "label": "Spare parts",
+          "value": "Purchase, sale and supply"
+        }
+      }
     },
     "about": {
-      "kicker": "Kaya Makina",
-      "title": "Engineering precision for heavy equipment",
-      "text": "Built on years of hands-on experience, our team specializes in the diagnostics, repair and maintenance of heavy machinery — from excavators to mining equipment. Our goal is simple: minimize your machine downtime.",
-      "badge": "10+ years of experience",
-      "points": {
-        "experience": {
-          "title": "Experienced team",
-          "text": "Years of accumulated field and workshop experience with heavy equipment."
-        },
-        "expertise": {
-          "title": "Technical mastery",
-          "text": "Modern diagnostic equipment and factory-standard repair procedures."
-        },
-        "customer": {
-          "title": "Customer-focused service",
-          "text": "Transparent pricing, reliable deadlines and continuous technical support."
-        }
-      },
+      "kicker": "About the company",
+      "title": "A workshop built around heavy equipment",
+      "p1": "Kaya Makina specializes in the comprehensive maintenance, repair and technical servicing of heavy machinery, construction equipment and industrial vehicles. We work on excavators, loaders, bulldozers and other equipment from Caterpillar (CAT), Hyundai and other makes.",
+      "p2": "From troubleshooting and inspections to complete overhauls and spare parts supply, we provide the technical support your machinery needs to work reliably and efficiently.",
       "cta": "About the company"
     },
     "services": {
       "kicker": "Services",
-      "title": "What we offer",
-      "lead": "From diagnostics to full overhauls — a complete range of services to keep your equipment running."
+      "title": "What we do",
+      "lead": "Eight areas of work that cover the main systems of a machine — from the engine to the electrics.",
+      "cta": "All services"
+    },
+    "process": {
+      "kicker": "How we work",
+      "title": "From diagnosis to test run",
+      "lead": "A major repair goes through the same four stages in our workshop.",
+      "steps": {
+        "diagnosis": {
+          "title": "Diagnosis",
+          "text": "Mechanical inspection and electronic diagnostics show where the fault is before any repair begins."
+        },
+        "teardown": {
+          "title": "Teardown",
+          "text": "The unit is stripped down and its parts are inspected one by one."
+        },
+        "rebuild": {
+          "title": "Rebuild",
+          "text": "Worn parts are replaced and the unit is reassembled."
+        },
+        "test": {
+          "title": "Test run",
+          "text": "The engine is started and checked on the stand before it goes back into the machine."
+        }
+      }
     },
     "machines": {
       "kicker": "Equipment",
-      "title": "Machines we service",
-      "lead": "We service construction and mining equipment from all major manufacturers.",
+      "title": "Machines we work on",
+      "lead": "We service heavy machinery, construction equipment and industrial vehicles.",
       "items": {
         "excavators": "Excavators",
         "loaders": "Loaders",
         "dozers": "Bulldozers",
-        "construction": "Construction equipment",
-        "special": "Special equipment",
-        "mining": "Mining equipment"
-      }
+        "other": "Other heavy equipment"
+      },
+      "brandsLabel": "Makes",
+      "brands": "Caterpillar (CAT), Hyundai and others",
+      "cta": "More about equipment"
     },
-    "whyUs": {
-      "kicker": "Why us",
-      "title": "Why choose Kaya Makina?",
-      "points": {
-        "technicians": {
-          "title": "Experienced technicians",
-          "text": "Certified specialists resolve even the most complex failures quickly."
-        },
-        "response": {
-          "title": "Fast response",
-          "text": "We respond to your request immediately — every idle hour costs money."
-        },
-        "diagnostics": {
-          "title": "Professional diagnostics",
-          "text": "We pinpoint the root cause of a failure with modern equipment."
-        },
-        "parts": {
-          "title": "Quality spare parts",
-          "text": "We only use genuine or OEM-standard parts."
-        },
-        "expertise": {
-          "title": "Industrial expertise",
-          "text": "We know the demands of the construction, mining and infrastructure sectors."
-        },
-        "reliability": {
-          "title": "Reliable solutions",
-          "text": "We guarantee our work and stand behind the result."
-        }
-      }
-    },
-    "stats": {
-      "years": "Years of experience",
-      "machines": "Machines serviced",
-      "support": "Technical support",
-      "team": "Team specialists"
-    },
-    "brands": {
-      "title": "Brands we service"
+    "parts": {
+      "kicker": "Spare parts",
+      "title": "Spare parts — bought, sold and supplied",
+      "text": "Alongside repairs, Kaya Makina trades in spare parts for heavy machinery and construction equipment, so the part and the work can come from one place.",
+      "bullets": [
+        "Spare and replacement parts",
+        "Mechanical components",
+        "Hydraulic equipment"
+      ],
+      "cta": "Ask about a part"
     },
     "cta": {
-      "title": "Your machine downtime costs money",
-      "text": "Let Kaya Makina restore your equipment quickly. Get in touch with us today.",
-      "button": "Contact our team"
+      "title": "Is your machine out of action?",
+      "text": "Tell us the machine and the fault. We will diagnose it and get it back to work.",
+      "button": "Request service"
     }
   },
   "services": {
     "intro": {
       "kicker": "Services",
-      "title": "Our Services",
-      "lead": "Complete service for every major system of your heavy equipment — under one roof."
+      "title": "Our services",
+      "lead": "Maintenance, repair and technical servicing for the main systems of heavy machinery — in one workshop."
     },
-    "equipmentLabel": "Equipment supported",
+    "indexLabel": "On this page",
     "items": {
-      "excavator": {
-        "title": "Excavator Repair",
-        "short": "Mechanical diagnostics, engine and hydraulic repair — in one place.",
-        "description": "We specialize in complete diagnostics and repair of excavators. From mechanical failures to engine and hydraulic system problems — we restore your machine to factory specifications.",
+      "engine": {
+        "title": "Engine repair and overhaul",
+        "short": "Diesel engines stripped down, rebuilt and test-run.",
+        "description": "We repair and fully overhaul the diesel engines of heavy machinery: the engine is stripped down, its parts are inspected, worn ones are replaced, and the engine is reassembled and test-run before handover.",
         "bullets": [
-          "Computerized mechanical diagnostics",
-          "Engine repair and overhaul",
-          "Hydraulic system repair",
-          "Attachment and work tool restoration"
-        ],
-        "equipment": "Crawler and wheeled excavators by Caterpillar, Komatsu, Hitachi, Volvo, Doosan, Hyundai and other brands"
+          "Running repairs and complete overhauls",
+          "Teardown, inspection and replacement of worn parts",
+          "Cylinder block, liner, piston and crankshaft work",
+          "Test run before handover"
+        ]
       },
-      "maintenance": {
-        "title": "Heavy Equipment Maintenance",
-        "short": "Scheduled maintenance, fleet support and preventive inspections.",
-        "description": "Scheduled maintenance prevents unexpected breakdowns. We build a tailored service schedule for your fleet and document everything — from filter and oil changes to full inspections.",
+      "transmission": {
+        "title": "Transmission and gearbox repair",
+        "short": "From finding the fault to a complete rebuild.",
+        "description": "We diagnose and repair the transmissions and gearboxes of heavy machinery — from finding the fault to a complete rebuild of the unit.",
         "bullets": [
-          "Scheduled maintenance per manufacturer intervals",
-          "Corporate support for equipment fleets",
-          "Preventive inspections and reporting",
-          "Oil and filter analysis"
-        ],
-        "equipment": "Construction and mining equipment fleets of all types"
+          "Transmission and gearbox repair",
+          "Fault finding",
+          "Replacement of worn components",
+          "Assembly and functional check"
+        ]
       },
       "hydraulics": {
-        "title": "Hydraulic Systems",
-        "short": "Repair and restoration of pumps, cylinders and valves.",
-        "description": "Hydraulics are the heart of heavy machinery. We have the equipment to diagnose, repair and test hydraulic pumps, cylinders, valves and hydraulic motors.",
+        "title": "Hydraulic system maintenance and repair",
+        "short": "Hydraulic servicing, fault finding and repair.",
+        "description": "Hydraulics do the heavy lifting on every machine. We service hydraulic systems, find and fix faults, and supply the hydraulic equipment the job needs.",
         "bullets": [
-          "Hydraulic pump repair",
-          "Cylinder restoration and seal kits",
-          "Valve block adjustment",
-          "Hose and line replacement"
-        ],
-        "equipment": "Excavators, loaders, bulldozers and other machines with hydraulic systems"
+          "Hydraulic system maintenance",
+          "Fault finding and repair",
+          "Hydraulic cylinders, lines and seals",
+          "Hydraulic equipment supply"
+        ]
       },
-      "engine": {
-        "title": "Engine & Transmission Service",
-        "short": "Overhaul of diesel engines and transmissions.",
-        "description": "Diagnostics, running repairs and complete overhauls of diesel engines and drivetrains. We work to factory tolerances and hand over tested, verified machines.",
+      "pumps": {
+        "title": "Pump and reducer repair",
+        "short": "Pumps and reducers inspected, repaired and reassembled.",
+        "description": "We repair the pumps and reducers of heavy machinery: the unit is stripped down and inspected, worn parts are replaced, and it is assembled again.",
         "bullets": [
-          "Complete engine overhaul",
-          "Transmission and gearbox repair",
-          "Fuel system diagnostics",
-          "Turbocharger service"
-        ],
-        "equipment": "Industrial diesel engines of all major brands"
+          "Pump repair",
+          "Reducer repair",
+          "Inspection and replacement of worn parts",
+          "Assembly and checking"
+        ]
       },
-      "field": {
-        "title": "Field Service",
-        "short": "On-site repair and emergency support at your job site.",
-        "description": "Machines can't always be brought to the workshop. Our mobile service crews come directly to your site with the right tools and spare parts and carry out repairs on the spot.",
+      "diagnostics": {
+        "title": "Mechanical and electronic diagnostics",
+        "short": "We find the cause of a fault before the repair starts.",
+        "description": "Before a repair begins we establish what is actually wrong: a mechanical inspection, plus electronic diagnostics with a laptop connected to the machine's control unit.",
         "bullets": [
-          "On-site diagnostics and repair",
-          "Rapid emergency call-out support",
-          "Fully equipped mobile service vehicles",
-          "Coverage across the regions"
-        ],
-        "equipment": "All types of self-propelled construction and mining machinery"
+          "Electronic (computer) diagnostics",
+          "Mechanical inspection and troubleshooting",
+          "Equipment inspections",
+          "Repair recommendations"
+        ]
+      },
+      "electrical": {
+        "title": "Electrical system repair",
+        "short": "Electrical faults found and fixed.",
+        "description": "We find and fix faults in the electrical systems of heavy machinery — from wiring to sensors and control circuits.",
+        "bullets": [
+          "Electrical fault finding",
+          "Wiring harness and connector repair",
+          "Starting and power supply circuits",
+          "Sensors and control circuits"
+        ]
+      },
+      "maintenance": {
+        "title": "Preventive maintenance",
+        "short": "Oil and filter changes, preventive care and general servicing.",
+        "description": "Oil and filter changes, preventive maintenance and general servicing keep machinery reliable between repairs.",
+        "bullets": [
+          "Oil and filter changes",
+          "Preventive maintenance",
+          "General machinery servicing",
+          "Equipment inspections"
+        ]
       },
       "parts": {
-        "title": "Spare Parts & Technical Support",
-        "short": "Supply of quality parts and expert advice.",
-        "description": "We organize fast supply of genuine and OEM-standard spare parts and provide technical guidance on the right selection. Parts and installation — from a single source.",
+        "title": "Spare parts sale and supply",
+        "short": "Spare parts, mechanical components and hydraulic equipment.",
+        "description": "We buy, sell and supply spare parts, mechanical components, hydraulic equipment and replacement parts for heavy machinery and construction equipment.",
         "bullets": [
-          "Genuine and OEM parts supply",
-          "Filters, oils and consumables",
-          "Technical consultation",
-          "Installation and warranty"
-        ],
-        "equipment": "Heavy machinery of all major brands"
+          "Spare and replacement parts",
+          "Mechanical components",
+          "Hydraulic equipment",
+          "Purchase, sale and supply"
+        ]
       }
     }
   },
   "equipment": {
     "intro": {
-      "kicker": "Equipment catalog",
-      "title": "Machines We Service",
-      "lead": "We service all major types of heavy machinery used in the construction, mining and infrastructure sectors."
+      "kicker": "Equipment",
+      "title": "Machines we service",
+      "lead": "Heavy machinery, construction equipment and industrial vehicles — the machines that cannot afford to stand still."
     },
-    "note": "Have a machine that isn't listed? Contact us — we also service graders, cranes, pavers and other specialized equipment.",
     "categories": {
       "excavators": {
         "name": "Excavators",
-        "description": "Complete diagnostics, repair and maintenance of crawler and wheeled excavators.",
+        "description": "Engine, hydraulic system, pump and reducer repair, diagnostics and regular servicing.",
         "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
       },
       "loaders": {
         "name": "Loaders",
-        "description": "Engine, transmission and hydraulic repair for wheel and telescopic loaders.",
+        "description": "Engine, transmission and gearbox, hydraulic and electrical repair, with regular servicing.",
         "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
       },
       "dozers": {
         "name": "Bulldozers",
-        "description": "Undercarriage, drivetrain and work equipment restoration for bulldozers.",
+        "description": "Engine and transmission overhaul, hydraulic repair, diagnostics and maintenance.",
         "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
       },
-      "trucks": {
-        "name": "Mining Trucks",
-        "description": "Heavy-duty service for quarry dump trucks and mining equipment.",
+      "other": {
+        "name": "Other equipment",
+        "description": "Other construction equipment and industrial vehicles — tell us what you run and we will tell you how we can help.",
         "services": ["Diagnostics", "Repair", "Maintenance", "Spare parts"]
       }
-    }
-  },
-  "projects": {
-    "intro": {
-      "kicker": "Projects",
-      "title": "Examples of Our Work",
-      "lead": "From workshop overhauls to field service — snapshots from our daily work."
     },
-    "note": "This gallery is representative and will be updated regularly with new project photos.",
+    "brands": {
+      "kicker": "Makes",
+      "title": "Caterpillar, Hyundai and other makes",
+      "text": "We work on equipment from brands such as Caterpillar (CAT) and Hyundai, and on machines from other manufacturers.",
+      "note": "Kaya Makina is an independent service company."
+    },
+    "note": "Is your machine not listed? Contact us and we will tell you how we can help."
+  },
+  "gallery": {
+    "intro": {
+      "kicker": "Gallery",
+      "title": "Inside the workshop",
+      "lead": "Engines in overhaul, units ready for installation and the machines we work on — all photographed in our own workshop."
+    },
+    "video": {
+      "kicker": "Video",
+      "title": "Engine test run",
+      "text": "After the repair, the engine is started on the stand and checked with a diagnostic laptop connected. Only then does it go back into the machine."
+    },
+    "photos": {
+      "kicker": "Photos",
+      "title": "From the workshop floor"
+    },
     "captions": {
-      "g01": "Excavator at a mining site",
-      "g02": "Job site at sunset",
-      "g03": "Welding works — workshop",
-      "g04": "Loader in an underground quarry",
-      "g05": "Cranes on a construction site",
-      "g06": "Engine repair in progress",
-      "g07": "Undercarriage restoration",
-      "g08": "Heavy machinery on site"
+      "workshop-floor": "Workshop floor",
+      "overhead-crane": "Overhead bridge crane",
+      "workshop-hall": "Units on pallets in the workshop hall",
+      "engine-rebuilt": "Engine in the workshop",
+      "engine-front": "Assembled engine",
+      "engine-flywheel": "Engine, flywheel side",
+      "engine-hall": "Engine on a stand",
+      "block-liners": "Cylinder block and liners",
+      "block-pistons": "Cylinder block and pistons",
+      "pistons-rods": "Pistons and connecting rods",
+      "crankshaft": "Crankshaft in the block",
+      "teardown-parts": "Engine stripped down for overhaul",
+      "teardown-block": "Engine block during teardown",
+      "cylinder-bores": "Cylinder bores",
+      "engine-dismantled": "Engine removed for repair",
+      "component-1": "Unit packed on a pallet",
+      "component-3": "Packed unit",
+      "component-4": "Packed unit",
+      "hydraulic-cylinder": "Hydraulic cylinder and a packed unit",
+      "yard": "Machines in the yard",
+      "yard-crane": "Crawler crane in the yard",
+      "diagnostics": "Diagnostic laptop on the bench",
+      "test-run-start": "Engine test run"
     }
   },
   "about": {
     "intro": {
       "kicker": "About us",
       "title": "Kaya Makina",
-      "lead": "A Baku-based engineering team specialized in the repair and maintenance of heavy machinery."
+      "lead": "A Baku-based company specializing in the maintenance, repair and technical servicing of heavy machinery."
     },
     "story": {
-      "kicker": "Our history",
-      "title": "Trust built on experience",
-      "p1": "Kaya Makina was built on years of hands-on experience in the heavy machinery sector. What began as a small workshop has grown into a professional service center covering a wide range of machines — from excavators to mining equipment.",
-      "p2": "Today we keep the fleets of construction companies and infrastructure contractors running. We approach every repair with engineering precision and guarantee the result."
+      "kicker": "Who we are",
+      "title": "Maintenance, repair and parts for heavy machinery",
+      "p1": "Kaya Makina specializes in the comprehensive maintenance, repair and technical servicing of heavy machinery, construction equipment and industrial vehicles. We work on excavators, loaders, bulldozers and other equipment from brands such as Caterpillar (CAT) and Hyundai.",
+      "p2": "Our work covers engine repair and overhaul, transmission and gearbox repair, hydraulic systems, pumps and reducers, mechanical and electronic diagnostics, electrical repairs and preventive maintenance. We also buy, sell and supply spare parts, mechanical components and hydraulic equipment."
     },
-    "mission": {
-      "title": "Our Mission",
-      "text": "To minimize our customers' heavy equipment downtime — through professional diagnostics, quality repair and responsive field support."
-    },
-    "vision": {
-      "title": "Our Vision",
-      "text": "To be the first choice for heavy machinery service in Azerbaijan and bring internationally benchmarked service standards to the local market."
-    },
-    "approach": {
-      "kicker": "Our approach",
-      "title": "The engineering approach",
-      "lead": "Every repair is built on four principles.",
-      "points": {
-        "diagnostics": {
-          "title": "Accurate diagnosis first",
-          "text": "We never start a repair before finding the root cause of the failure."
+    "pillars": {
+      "kicker": "What we do",
+      "title": "Three lines of work",
+      "items": {
+        "repair": {
+          "title": "Repair and overhaul",
+          "text": "Engines, transmissions and gearboxes, hydraulic systems, pumps and reducers."
+        },
+        "service": {
+          "title": "Diagnostics and maintenance",
+          "text": "Mechanical and electronic diagnostics, electrical repairs, oil and filter changes, preventive maintenance and inspections."
         },
         "parts": {
-          "title": "Right part, right tool",
-          "text": "We work with genuine/OEM parts and calibrated equipment."
-        },
-        "safety": {
-          "title": "Safety first",
-          "text": "All work is carried out to industrial safety standards."
-        },
-        "transparency": {
-          "title": "Transparent process",
-          "text": "Full accountability on price, timeline and the work performed."
+          "title": "Spare parts",
+          "text": "Purchase, sale and supply of spare parts, mechanical components, hydraulic equipment and replacement parts."
         }
       }
     },
-    "team": {
-      "kicker": "Team",
-      "title": "A professional team",
-      "text": "Our team consists of certified mechanics, hydraulics specialists and field engineers. Continuous training keeps our expertise current with the newest generations of equipment."
+    "workshop": {
+      "kicker": "Workshop",
+      "title": "A hall equipped for heavy units",
+      "text": "The overhead bridge crane in our covered workshop lifts and moves engines, transmissions and other heavy units, with the benches and tooling for teardown and assembly close at hand.",
+      "features": [
+        "Covered hall with an overhead crane",
+        "Engine test runs",
+        "Electronic diagnostic equipment"
+      ]
+    },
+    "goal": {
+      "label": "Our goal",
+      "text": "Reliable and efficient operation of your machinery."
     }
   },
   "contact": {
     "intro": {
       "kicker": "Contact",
-      "title": "Get in Touch",
-      "lead": "For service requests, quotes or technical questions — our team is ready to help."
+      "title": "Get in touch",
+      "lead": "For service requests, spare parts, quotes or technical questions — our team is ready to help."
     },
     "info": {
       "title": "Contact details",
@@ -344,7 +391,6 @@
         "excavators": "Excavator",
         "loaders": "Loader",
         "dozers": "Bulldozer",
-        "trucks": "Mining truck",
         "other": "Other"
       },
       "errors": {
@@ -357,7 +403,7 @@
       "success": "Your request has been received. We will contact you shortly.",
       "error": "Something went wrong. Please contact us by phone or WhatsApp.",
       "fallbackNote": "The form currently sends via your email client. You can also reach us directly by phone or WhatsApp.",
-      "mailSubject": "Service request — kaya-makina.com"
+      "mailSubject": "Service request — kayamakina.az"
     },
     "map": {
       "title": "Find us on the map",
@@ -365,7 +411,7 @@
     }
   },
   "footer": {
-    "blurb": "Professional repair, maintenance and field support for excavators and heavy construction machinery. Baku, Azerbaijan.",
+    "blurb": "Maintenance, repair and technical servicing of heavy machinery and construction equipment, and spare parts supply. Baku, Azerbaijan.",
     "quickLinks": "Quick links",
     "rights": "All rights reserved.",
     "location": "Baku · Azerbaijan",

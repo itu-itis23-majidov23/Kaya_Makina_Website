@@ -26,61 +26,84 @@ export default async function ServicesPage({ params }: Props) {
         kicker={t("intro.kicker")}
         title={t("intro.title")}
         lead={t("intro.lead")}
+        image="/images/engine-flywheel.jpg"
+        position="50% 34%"
       />
 
-      {SERVICES.map((service, i) => {
-        const Icon = service.icon;
-        const bullets = t.raw(`items.${service.id}.bullets`) as string[];
-        const even = i % 2 === 0;
-        return (
-          <section
-            key={service.id}
-            id={service.id}
-            className={even ? "bg-paper" : "bg-white"}
-          >
-            <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-20">
-              <Reveal className={even ? "" : "lg:order-2"}>
-                <div className="clip-corner-lg relative aspect-[3/2]">
+      {/* Jump list */}
+      <nav aria-label={t("indexLabel")} className="border-b border-line">
+        <div className="shell py-6">
+          <p className="label">{t("indexLabel")}</p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {SERVICES.map(({ id, icon: Icon }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className="inline-flex items-center gap-2 rounded-md border border-line bg-surface px-3.5 py-2 text-sm text-muted transition-colors hover:border-brand/60 hover:text-fg"
+                >
+                  <Icon className="h-4 w-4 text-brand" strokeWidth={1.75} aria-hidden />
+                  {t(`items.${id}.title`)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      <div className="shell">
+        {SERVICES.map((service, i) => {
+          const Icon = service.icon;
+          const bullets = t.raw(`items.${service.id}.bullets`) as string[];
+          const flip = i % 2 === 1;
+          return (
+            <section
+              key={service.id}
+              id={service.id}
+              className="grid items-center gap-10 border-b border-line py-16 last:border-b-0 lg:grid-cols-2 lg:gap-20 lg:py-24"
+            >
+              <Reveal className={flip ? "lg:order-2" : ""}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-surface">
                   <Image
                     src={service.image}
-                    alt={t(`items.${service.id}.title`)}
+                    alt=""
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
+                    style={{ objectPosition: service.position }}
                   />
                 </div>
               </Reveal>
-              <Reveal delay={100} className={even ? "" : "lg:order-1"}>
-                <div className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-brand-500 text-ink-950">
-                    <Icon className="h-6 w-6" aria-hidden />
-                  </span>
-                  <h2 className="font-display text-2xl font-semibold uppercase tracking-tight text-ink-900 sm:text-3xl">
-                    {t(`items.${service.id}.title`)}
-                  </h2>
-                </div>
-                <p className="mt-5 leading-relaxed text-ink-500">
+
+              <Reveal delay={100} className={flip ? "lg:order-1" : ""}>
+                <span className="flex h-12 w-12 items-center justify-center rounded-md border border-line bg-surface text-brand">
+                  <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                </span>
+                <h2 className="mt-6 font-display text-[clamp(1.5rem,1.2rem+1.2vw,2.125rem)] font-bold leading-[1.12] tracking-[-0.02em]">
+                  {t(`items.${service.id}.title`)}
+                </h2>
+                <p className="mt-4 leading-relaxed text-muted">
                   {t(`items.${service.id}.description`)}
                 </p>
-                <ul className="mt-6 space-y-2.5">
-                  {bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 text-sm text-ink-700">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                      {b}
+                <ul className="mt-7 space-y-3 border-t border-line pt-7">
+                  {bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-start gap-3 text-[0.9375rem] leading-snug text-fg"
+                    >
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+                        strokeWidth={2.5}
+                        aria-hidden
+                      />
+                      {bullet}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 border-l-2 border-brand-500 bg-white/60 py-2 pl-4 text-sm text-ink-500">
-                  <span className="font-display font-semibold uppercase tracking-wider text-ink-700">
-                    {t("equipmentLabel")}:
-                  </span>{" "}
-                  {t(`items.${service.id}.equipment`)}
-                </p>
               </Reveal>
-            </div>
-          </section>
-        );
-      })}
+            </section>
+          );
+        })}
+      </div>
 
       <CTABand />
     </>

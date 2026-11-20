@@ -1,73 +1,182 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand yellow — sampled from the Kaya Makina logo (#E7A51E) */
-  --color-brand-300: #f3c568;
-  --color-brand-400: #eeb43e;
-  --color-brand-500: #e7a51e;
-  --color-brand-600: #c98d12;
-  --color-brand-700: #a3720d;
+  /* Graphite surfaces — the workshop floor, lit from the roof lights */
+  --color-bg: #0b0c0d;
+  --color-surface: #121315;
+  --color-raised: #191b1e;
+  --color-line: #25272b;
+  --color-line-strong: #3a3d43;
 
-  /* Charcoal ink scale around the logo charcoal (#202020) */
-  --color-ink-950: #161616;
-  --color-ink-900: #202020;
-  --color-ink-800: #2b2b2b;
-  --color-ink-700: #3a3a3a;
-  --color-ink-600: #4f4f4f;
-  --color-ink-500: #6b6b6b;
-  --color-ink-400: #8a8a8a;
-  --color-ink-300: #b8b8b8;
-  --color-ink-200: #d6d6d6;
-  --color-ink-100: #e8e8e8;
+  /* Text */
+  --color-fg: #f3f1eb;
+  --color-muted: #aba8a1;
+  --color-dim: #8b8880;
 
-  /* Page background — logo off-white */
-  --color-paper: #f0f0f0;
+  /* Brand amber — sampled from the Kaya Makina logo (#E7A51E) */
+  --color-brand: #e7a51e;
+  --color-brand-bright: #f6bd4a;
+  --color-brand-deep: #b47f10;
 
-  --font-display: var(--font-oswald), var(--font-inter), sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  /* The web fonts cover Latin, Azerbaijani and Cyrillic. Chinese falls
+     through, glyph by glyph, to the Simplified Chinese font the visitor's
+     system already has — the normal practice for Chinese sites, where a
+     web font would weigh several megabytes. */
+  --font-cjk: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC";
+  --font-display: var(--font-geologica), var(--font-inter), var(--font-cjk),
+    system-ui, sans-serif;
+  --font-sans: var(--font-inter), var(--font-cjk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular",
+    var(--font-cjk), monospace;
 }
 
-/* ---- Industrial visual vocabulary ---- */
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the sticky header */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
 
-/* Clipped bottom-right corner (buttons, chips) */
-@utility clip-corner {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 12px),
-    calc(100% - 12px) 100%,
-    0 100%
-  );
+  body {
+    background: var(--color-bg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-bright);
+    outline-offset: 3px;
+  }
 }
 
-/* Larger clip for cards / media blocks */
-@utility clip-corner-lg {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 22px),
-    calc(100% - 22px) 100%,
-    0 100%
-  );
+@layer components {
+  /* Page gutter + max width, shared by every section */
+  .shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 78rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    .shell {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Small technical label above headings — set in the mono face, like the
+     stamped lines on an engine data plate */
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--color-brand);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--color-dim);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-brand);
+    color: var(--color-bg);
+    padding: 0.6em 1.2em;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
 }
 
-/* Hazard-stripe accent bar — use sparingly */
-@utility hazard-stripe {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--color-brand-500) 0 14px,
-    var(--color-ink-950) 14px 28px
-  );
+/* Hero entrance: copy rises in, the photo settles. CSS-only, so it also
+   runs before hydration and never hides content from no-JS visitors. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  /* keep anchored sections clear of the sticky header */
-  scroll-padding-top: 6rem;
+@keyframes settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.settle {
+  animation: settle 14s cubic-bezier(0.2, 0.6, 0.2, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  .rise,
+  .settle {
+    animation: none;
+  }
+}
+
+/* Chinese typography. These rules are deliberately outside any @layer so
+   they win over the Latin-tuned tracking and leading utilities.
+   - Full-width glyphs want no negative tracking and more leading.
+   - Display text may only wrap between phrases — at the zero-width spaces
+     (\u200b) written into messages/zh.json — never inside a word. If a
+     phrase is still too long for a narrow screen, it may break anywhere. */
+:lang(zh) :is(h1, h2, h3, p).font-display {
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+:lang(zh) :is(h1, h2).font-display,
+:lang(zh) p.font-display {
+  line-height: 1.24;
+}
+
+:lang(zh) :is(.kicker, .label) {
+  letter-spacing: 0.2em;
 }

@@ -1,22 +1,16 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Building2,
-  CalendarCheck,
+  Activity,
+  ClipboardCheck,
   Cog,
+  Cylinder,
   Droplets,
-  Factory,
+  Fan,
   Forklift,
-  Gauge,
-  Handshake,
-  HardHat,
   Mountain,
   Package,
-  Pickaxe,
-  ShieldCheck,
   Shovel,
   Tractor,
-  Truck,
-  Wrench,
   Zap,
 } from "lucide-react";
 
@@ -24,95 +18,99 @@ import {
 // human-readable copy lives in messages/{az,en,ru}.json under matching keys.
 // Service ids double as URL anchors (/services#<id>) and message keys
 // (services.items.<id>), so home cards and detail sections can never drift.
+//
+// Every photo and video on the site was shot in the Kaya Makina workshop.
+
+export type ServiceId =
+  | "engine"
+  | "transmission"
+  | "hydraulics"
+  | "pumps"
+  | "diagnostics"
+  | "electrical"
+  | "maintenance"
+  | "parts";
 
 export type Service = {
-  id: "excavator" | "maintenance" | "hydraulics" | "engine" | "field" | "parts";
+  id: ServiceId;
   icon: LucideIcon;
   image: string;
+  /** CSS object-position for the 4:3 crop on the services page */
+  position?: string;
 };
 
 export const SERVICES: Service[] = [
-  { id: "excavator", icon: Wrench, image: "/images/service-excavator.jpg" },
-  { id: "maintenance", icon: CalendarCheck, image: "/images/service-maintenance.jpg" },
-  { id: "hydraulics", icon: Droplets, image: "/images/service-hydraulics.jpg" },
-  { id: "engine", icon: Cog, image: "/images/service-engine.jpg" },
-  { id: "field", icon: Truck, image: "/images/service-field.jpg" },
-  { id: "parts", icon: Package, image: "/images/service-parts.jpg" },
+  { id: "engine", icon: Cylinder, image: "/images/engine-rebuilt.jpg" },
+  { id: "transmission", icon: Cog, image: "/images/component-4.jpg", position: "50% 38%" },
+  { id: "hydraulics", icon: Droplets, image: "/images/hydraulic-cylinder.jpg", position: "50% 30%" },
+  { id: "pumps", icon: Fan, image: "/images/component-1.jpg", position: "50% 30%" },
+  { id: "diagnostics", icon: Activity, image: "/images/diagnostics.jpg", position: "80% 50%" },
+  { id: "electrical", icon: Zap, image: "/images/engine-wiring.jpg" },
+  { id: "maintenance", icon: ClipboardCheck, image: "/images/workshop-floor.jpg" },
+  { id: "parts", icon: Package, image: "/images/workshop-hall.jpg", position: "70% 60%" },
 ];
 
-// Home "Machines We Service" tiles — copy under home.machines.items.<id>
-export const MACHINES: { id: string; icon: LucideIcon }[] = [
+// Hero "data plate" — copy under home.plate.items.<id>.{label,value}
+export const PLATE = ["workshop", "repair", "diagnostics", "parts"] as const;
+
+// Home "From diagnosis to test run" — copy under home.process.steps.<id>.
+// The last step plays a short muted loop of an engine on the test stand.
+export const PROCESS: {
+  id: "diagnosis" | "teardown" | "rebuild" | "test";
+  image: string;
+  position?: string;
+  video?: string;
+}[] = [
+  { id: "diagnosis", image: "/images/diagnostics.jpg", position: "92% 50%" },
+  { id: "teardown", image: "/images/block-liners.jpg", position: "76% 50%" },
+  { id: "rebuild", image: "/images/crankshaft.jpg" },
+  {
+    id: "test",
+    image: "/images/test-run-poster.jpg",
+    video: "/video/test-run-loop.mp4",
+    position: "34% 50%",
+  },
+];
+
+// Machine types — copy under home.machines.items.<id> (short label) and
+// equipment.categories.<id> (name, description, services).
+export const MACHINES: { id: "excavators" | "loaders" | "dozers" | "other"; icon: LucideIcon }[] = [
   { id: "excavators", icon: Shovel },
   { id: "loaders", icon: Tractor },
   { id: "dozers", icon: Mountain },
-  { id: "construction", icon: Building2 },
-  { id: "special", icon: Forklift },
-  { id: "mining", icon: Pickaxe },
+  { id: "other", icon: Forklift },
 ];
 
-// Home "Why Choose Us" points — copy under home.whyUs.points.<id>
-export const WHY_US: { id: string; icon: LucideIcon }[] = [
-  { id: "technicians", icon: HardHat },
-  { id: "response", icon: Zap },
-  { id: "diagnostics", icon: Gauge },
-  { id: "parts", icon: ShieldCheck },
-  { id: "expertise", icon: Factory },
-  { id: "reliability", icon: Handshake },
+// Workshop gallery — captions under gallery.captions.<id>.
+// Width/height are the real pixel sizes, so the masonry never shifts.
+export const GALLERY: { id: string; w: number; h: number }[] = [
+  { id: "workshop-floor", w: 1108, h: 739 },
+  { id: "engine-front", w: 739, h: 924 },
+  { id: "block-liners", w: 1108, h: 739 },
+  { id: "crankshaft", w: 739, h: 924 },
+  { id: "pistons-rods", w: 1108, h: 739 },
+  { id: "engine-rebuilt", w: 975, h: 650 },
+  { id: "overhead-crane", w: 1108, h: 739 },
+  { id: "cylinder-bores", w: 739, h: 924 },
+  { id: "teardown-parts", w: 1108, h: 739 },
+  { id: "component-1", w: 739, h: 924 },
+  { id: "workshop-hall", w: 1108, h: 739 },
+  { id: "engine-flywheel", w: 739, h: 924 },
+  { id: "block-pistons", w: 1108, h: 739 },
+  { id: "hydraulic-cylinder", w: 1108, h: 739 },
+  { id: "component-4", w: 739, h: 924 },
+  { id: "teardown-block", w: 1108, h: 739 },
+  { id: "engine-hall", w: 739, h: 924 },
+  { id: "diagnostics", w: 854, h: 480 },
+  { id: "yard", w: 900, h: 600 },
+  { id: "component-3", w: 739, h: 924 },
+  { id: "engine-dismantled", w: 1108, h: 739 },
+  { id: "yard-crane", w: 739, h: 985 },
+  { id: "test-run-start", w: 854, h: 480 },
 ];
 
-// Stats band — labels under home.stats.<id>; values are language-neutral.
-// TODO: adjust the numbers to the company's real track record.
-export const STATS: { id: string; value: string }[] = [
-  { id: "years", value: "10+" },
-  { id: "machines", value: "500+" },
-  { id: "support", value: "24/7" },
-  { id: "team", value: "20+" },
-];
-
-// Equipment catalog — copy under equipment.categories.<id>;
-// brand names are language-neutral and stay here.
-export const EQUIPMENT: { id: string; image: string; brands: string }[] = [
-  {
-    id: "excavators",
-    image: "/images/equipment-excavator.jpg",
-    brands: "Caterpillar · Komatsu · Hitachi · Volvo · Doosan · Hyundai",
-  },
-  {
-    id: "loaders",
-    image: "/images/equipment-loader.jpg",
-    brands: "Caterpillar · Komatsu · Volvo · JCB · XCMG · SDLG",
-  },
-  {
-    id: "dozers",
-    image: "/images/equipment-dozer.jpg",
-    brands: "Caterpillar · Komatsu · Shantui · Liebherr",
-  },
-  {
-    id: "trucks",
-    image: "/images/equipment-truck.jpg",
-    brands: "Caterpillar · Komatsu · Volvo · MAN · Kamaz",
-  },
-];
-
-// Machinery brands strip on the home page (references placeholder).
-// TODO: replace with real customer/partner logos when available.
-export const BRANDS = [
-  "Caterpillar",
-  "Komatsu",
-  "Hitachi",
-  "Volvo CE",
-  "JCB",
-  "Doosan",
-];
-
-// Projects gallery — captions under projects.captions.<id>
-export const GALLERY: { id: string; image: string }[] = [
-  { id: "g01", image: "/images/gallery-01.jpg" },
-  { id: "g02", image: "/images/gallery-02.jpg" },
-  { id: "g03", image: "/images/gallery-03.jpg" },
-  { id: "g04", image: "/images/gallery-04.jpg" },
-  { id: "g05", image: "/images/gallery-05.jpg" },
-  { id: "g06", image: "/images/gallery-06.jpg" },
-  { id: "g07", image: "/images/gallery-07.jpg" },
-  { id: "g08", image: "/images/gallery-08.jpg" },
-];
+// Full test-run clip shown on the gallery page.
+export const TEST_RUN_VIDEO = {
+  src: "/video/test-run.mp4",
+  poster: "/images/test-run-poster.jpg",
+};

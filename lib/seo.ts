@@ -8,7 +8,7 @@ export type PageKey =
   | "about"
   | "services"
   | "equipment"
-  | "projects"
+  | "gallery"
   | "contact";
 
 // Trailing slashes must match `trailingSlash: true` in next.config.ts —
@@ -18,7 +18,7 @@ export const PAGE_PATHS: Record<PageKey, string> = {
   about: "/about/",
   services: "/services/",
   equipment: "/equipment/",
-  projects: "/projects/",
+  gallery: "/gallery/",
   contact: "/contact/",
 };
 

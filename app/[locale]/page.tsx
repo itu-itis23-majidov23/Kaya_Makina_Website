@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Award, Users, Wrench } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import CTABand from "@/components/home/CTABand";
 import Hero from "@/components/home/Hero";
-import LogoStrip from "@/components/home/LogoStrip";
+import Process from "@/components/home/Process";
 import ServiceCard from "@/components/home/ServiceCard";
-import StatItem from "@/components/home/StatItem";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { MACHINES, SERVICES, STATS, WHY_US } from "@/lib/content";
+import { Link } from "@/i18n/navigation";
+import { MACHINES, SERVICES } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -20,162 +20,202 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata(locale, "home");
 }
 
-const ABOUT_ICONS = [
-  { id: "experience", icon: Award },
-  { id: "expertise", icon: Wrench },
-  { id: "customer", icon: Users },
-] as const;
+const arrow =
+  "h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 motion-reduce:transition-none";
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const partsBullets = t.raw("parts.bullets") as string[];
 
   return (
     <>
       <Hero />
 
-      {/* About intro */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      {/* About */}
+      <section className="py-20 lg:py-28">
+        <div className="shell grid items-center gap-14 lg:grid-cols-[1fr_1.08fr] lg:gap-20">
           <Reveal>
-            <div className="clip-corner-lg relative aspect-[4/3]">
-              <Image
-                src="/images/about-workshop.jpg"
-                alt={t("about.title")}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute bottom-0 left-0 bg-brand-500 px-5 py-3 font-display text-sm font-bold uppercase tracking-widest text-ink-950">
-                {t("about.badge")}
-              </div>
+            <SectionHeading kicker={t("about.kicker")} title={t("about.title")} />
+            <p className="mt-6 leading-relaxed text-muted">{t("about.p1")}</p>
+            <p className="mt-4 leading-relaxed text-muted">{t("about.p2")}</p>
+            <div className="mt-8">
+              <Button href="/about" variant="outline">
+                {t("about.cta")}
+                <ArrowRight className={arrow} aria-hidden />
+              </Button>
             </div>
           </Reveal>
+
           <Reveal delay={120}>
-            <SectionHeading
-              kicker={t("about.kicker")}
-              title={t("about.title")}
-              lead={t("about.text")}
-            />
-            <ul className="mt-8 space-y-4">
-              {ABOUT_ICONS.map(({ id, icon: Icon }) => (
-                <li key={id} className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-ink-900 text-brand-500">
-                    <Icon className="h-5 w-5" aria-hidden />
-                  </span>
-                  <div>
-                    <p className="font-display text-base font-semibold uppercase tracking-wide text-ink-900">
-                      {t(`about.points.${id}.title`)}
-                    </p>
-                    <p className="mt-0.5 text-sm text-ink-500">
-                      {t(`about.points.${id}.text`)}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <Button href="/about" variant="outline-dark">
-                {t("about.cta")}
-              </Button>
+            <div className="relative sm:pb-14 sm:pr-14">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-lg border border-line">
+                <Image
+                  src="/images/workshop-floor.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 hidden aspect-[4/5] w-[36%] overflow-hidden rounded-lg border border-line-strong shadow-2xl shadow-black/70 sm:block">
+                <Image
+                  src="/images/engine-front.jpg"
+                  alt=""
+                  fill
+                  sizes="20vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* Services */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-line bg-surface py-20 lg:py-28">
+        <div className="shell">
           <Reveal>
-            <SectionHeading
-              align="center"
-              kicker={t("services.kicker")}
-              title={t("services.title")}
-              lead={t("services.lead")}
-            />
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading
+                kicker={t("services.kicker")}
+                title={t("services.title")}
+                lead={t("services.lead")}
+              />
+              <Button href="/services" variant="outline">
+                {t("services.cta")}
+                <ArrowRight className={arrow} aria-hidden />
+              </Button>
+            </div>
           </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((service, i) => (
-              <Reveal key={service.id} delay={(i % 3) * 100}>
-                <ServiceCard service={service} />
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={100}>
+            <ul className="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <ServiceCard service={service} />
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
-      {/* Machines we service */}
-      <section className="bg-ink-900 py-16 text-white lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Process />
+
+      {/* Machines */}
+      <section className="border-y border-line bg-surface py-20 lg:py-28">
+        <div className="shell grid items-center gap-14 lg:grid-cols-[1.08fr_1fr] lg:gap-20">
           <Reveal>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-lg border border-line">
+              <Image
+                src="/images/yard.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
             <SectionHeading
-              dark
-              align="center"
               kicker={t("machines.kicker")}
               title={t("machines.title")}
               lead={t("machines.lead")}
             />
+            <ul className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-line bg-line min-[26rem]:grid-cols-2">
+              {MACHINES.map(({ id, icon: Icon }) => (
+                <li
+                  key={id}
+                  className="flex items-center gap-3.5 bg-bg px-5 py-4 text-[0.9375rem] font-medium text-fg"
+                >
+                  <Icon className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} aria-hidden />
+                  {t(`machines.items.${id}`)}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span className="label">{t("machines.brandsLabel")}</span>
+              <span className="text-[0.9375rem] text-fg">{t("machines.brands")}</span>
+            </p>
+            <Link
+              href="/equipment"
+              className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-colors hover:text-brand-bright"
+            >
+              {t("machines.cta")}
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                aria-hidden
+              />
+            </Link>
           </Reveal>
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {MACHINES.map(({ id, icon: Icon }, i) => (
-              <li key={id}>
-                <Reveal delay={i * 60} className="h-full">
-                  <div className="flex h-full flex-col items-center gap-3 border border-white/10 bg-white/5 px-4 py-8 text-center transition-colors hover:border-brand-500/60">
-                    <Icon className="h-9 w-9 text-brand-500" aria-hidden />
-                    <span className="font-display text-sm font-semibold uppercase tracking-wider">
-                      {t(`machines.items.${id}`)}
-                    </span>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
-      {/* Why choose us */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Spare parts */}
+      <section className="py-20 lg:py-28">
+        <div className="shell grid items-center gap-14 lg:grid-cols-[1fr_1.08fr] lg:gap-20">
           <Reveal>
             <SectionHeading
-              align="center"
-              kicker={t("whyUs.kicker")}
-              title={t("whyUs.title")}
+              kicker={t("parts.kicker")}
+              title={t("parts.title")}
+              lead={t("parts.text")}
             />
-          </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {WHY_US.map(({ id, icon: Icon }, i) => (
-              <Reveal key={id} delay={(i % 3) * 100}>
-                <div className="clip-corner h-full bg-white p-6 shadow-sm">
-                  <span className="flex h-12 w-12 items-center justify-center bg-brand-500 text-ink-950">
-                    <Icon className="h-6 w-6" aria-hidden />
+            <ul className="mt-8 space-y-3">
+              {partsBullets.map((bullet) => (
+                <li key={bullet} className="flex items-center gap-3 text-[0.9375rem] text-fg">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand">
+                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden />
                   </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold uppercase tracking-wide text-ink-900">
-                    {t(`whyUs.points.${id}.title`)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-500">
-                    {t(`whyUs.points.${id}.text`)}
-                  </p>
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9">
+              <Button href="/contact">
+                {t("parts.cta")}
+                <ArrowRight className={arrow} aria-hidden />
+              </Button>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="grid grid-cols-5 gap-4">
+              <div className="relative col-span-3 aspect-[4/5] overflow-hidden rounded-lg border border-line">
+                <Image
+                  src="/images/workshop-hall.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 60vw, 30vw"
+                  className="object-cover object-[62%_50%]"
+                />
+              </div>
+              <div className="col-span-2 grid gap-4">
+                <div className="relative overflow-hidden rounded-lg border border-line">
+                  <Image
+                    src="/images/component-4.jpg"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 40vw, 20vw"
+                    className="object-cover"
+                  />
                 </div>
-              </Reveal>
-            ))}
-          </div>
+                <div className="relative overflow-hidden rounded-lg border border-line">
+                  <Image
+                    src="/images/pistons-rods.jpg"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 40vw, 20vw"
+                    className="object-cover object-[22%_70%]"
+                  />
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-ink-950 py-16 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
-          {STATS.map(({ id, value }, i) => (
-            <Reveal key={id} delay={i * 80}>
-              <StatItem value={value} label={t(`stats.${id}`)} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <LogoStrip />
       <CTABand />
     </>
   );

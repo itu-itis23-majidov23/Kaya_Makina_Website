@@ -3,7 +3,8 @@ type Props = {
   title: string;
   lead?: string;
   align?: "left" | "center";
-  dark?: boolean;
+  /** Heading level — section headings are h2 unless nested. */
+  as?: "h2" | "h3";
 };
 
 export default function SectionHeading({
@@ -11,29 +12,17 @@ export default function SectionHeading({
   title,
   lead,
   align = "left",
-  dark = false,
+  as: Tag = "h2",
 }: Props) {
   const center = align === "center";
   return (
-    <div className={center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      {kicker && (
-        <p
-          className={`font-display text-sm font-semibold uppercase tracking-[0.25em] ${dark ? "text-brand-400" : "text-brand-600"}`}
-        >
-          {kicker}
-        </p>
-      )}
-      <h2
-        className={`mt-2 font-display text-3xl font-semibold uppercase leading-tight tracking-tight lg:text-5xl ${dark ? "text-white" : "text-ink-900"}`}
-      >
+    <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+      {kicker && <p className="kicker">{kicker}</p>}
+      <Tag className="mt-3 font-display text-[clamp(1.75rem,1.25rem+2vw,2.75rem)] font-bold leading-[1.08] tracking-[-0.02em] text-fg">
         {title}
-      </h2>
-      <div
-        aria-hidden
-        className={`mt-4 h-1 w-16 bg-brand-500 ${center ? "mx-auto" : ""}`}
-      />
+      </Tag>
       {lead && (
-        <p className={`mt-5 text-base lg:text-lg ${dark ? "text-ink-300" : "text-ink-500"}`}>
+        <p className="mt-4 text-base leading-relaxed text-muted lg:text-lg">
           {lead}
         </p>
       )}

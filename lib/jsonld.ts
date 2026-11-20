@@ -20,7 +20,7 @@ export function localBusinessJsonLd(locale: string) {
     areaServed: "Azerbaijan",
     openingHours: "Mo-Sa 09:00-18:00",
     description:
-      "Repair, maintenance and field service for excavators and heavy construction machinery in Azerbaijan.",
+      "Maintenance, repair and technical servicing of heavy machinery and construction equipment — engine and transmission overhaul, hydraulics, diagnostics and spare parts supply.",
     sameAs: [],
   };
 }
