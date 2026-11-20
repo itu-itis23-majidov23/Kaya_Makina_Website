@@ -2,6 +2,7 @@
   "name": "kaya-makina",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@11.7.0",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -24,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.22",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.165.0"
   }
 }

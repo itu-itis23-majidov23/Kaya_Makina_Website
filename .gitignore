@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare
+.wrangler/
+
+# raw media sent over WhatsApp — the web-ready crops live in public/
+*.zip
