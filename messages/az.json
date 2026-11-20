@@ -58,7 +58,7 @@
       "items": {
         "workshop": {
           "label": "Emalatxana",
-          "value": "Körpülü kranlı qapalı sex"
+          "value": "Körpülü kranlı qapalı servis"
         },
         "repair": {
           "label": "Təmir və bərpa",
@@ -293,7 +293,7 @@
     "captions": {
       "workshop-floor": "Emalatxana",
       "overhead-crane": "Körpülü kran",
-      "workshop-hall": "Sexdə paletlərdəki aqreqatlar",
+      "workshop-hall": "Servisdə paletlərdəki aqreqatlar",
       "engine-rebuilt": "Emalatxanada mühərrik",
       "engine-front": "Yığılmış mühərrik",
       "engine-flywheel": "Mühərrik, nazim çarx tərəfdən",
@@ -348,10 +348,10 @@
     },
     "workshop": {
       "kicker": "Emalatxana",
-      "title": "Ağır aqreqatlar üçün təchiz olunmuş sex",
+      "title": "Ağır aqreqatlar üçün təchiz olunmuş servis",
       "text": "Qapalı emalatxanamızdakı körpülü kran mühərrikləri, transmissiyaları və digər ağır aqreqatları qaldırıb yerini dəyişməyə imkan verir; sökülmə və yığılma üçün iş masaları və alətlər əl altındadır.",
       "features": [
-        "Körpülü kranlı qapalı sex",
+        "Körpülü kranlı qapalı servis",
         "Mühərriklərin sınaq işə salınması",
         "Elektron diaqnostika avadanlığı"
       ]

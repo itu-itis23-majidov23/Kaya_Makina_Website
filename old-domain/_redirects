@@ -1,0 +1,17 @@
+# kaya-makina.com is retired: every address moves permanently to kayamakina.az.
+# This folder is the whole content of the old Cloudflare Pages project
+# "kaya-makina" (see the README, "Old domain").
+
+# The home page goes straight to the Azerbaijani version.
+/ https://kayamakina.az/az/ 301
+
+# "Projects" became "Gallery".
+/az/projects https://kayamakina.az/az/gallery/ 301
+/az/projects/ https://kayamakina.az/az/gallery/ 301
+/en/projects https://kayamakina.az/en/gallery/ 301
+/en/projects/ https://kayamakina.az/en/gallery/ 301
+/ru/projects https://kayamakina.az/ru/gallery/ 301
+/ru/projects/ https://kayamakina.az/ru/gallery/ 301
+
+# Everything else keeps its path.
+/* https://kayamakina.az/:splat 301

@@ -1,13 +1,12 @@
 // Central place for every contact detail and external URL.
-// TODO: replace the placeholder phone/WhatsApp/email/map values with the
-// real company details before launch — nothing else needs to change.
+// Still to fill in: the contact form endpoint and the map (see TODOs below).
 
 export const SITE_URL = "https://kayamakina.az";
 export const COMPANY = "Kaya Makina";
 
-export const PHONE_DISPLAY = "+994 50 000 00 00"; // TODO real number
-export const PHONE_TEL = "+994500000000"; // TODO real number
-export const WHATSAPP_NUMBER = "994500000000"; // TODO real number (digits only)
+export const PHONE_DISPLAY = "+994 50 414 52 58";
+export const PHONE_TEL = "+994504145258";
+export const WHATSAPP_NUMBER = "994504145258"; // digits only; assumed to be the same line as the phone
 export const EMAIL = "info@kayamakina.az"; // TODO confirm the mailbox exists (the domain's mail is on Google)
 
 // TODO: create a form on https://formspree.io (free tier) and paste the

@@ -32,8 +32,7 @@ Contact data lives in **`lib/site.ts`** — replace and push:
 
 | Constant | Currently | Replace with |
 |---|---|---|
-| `PHONE_DISPLAY` / `PHONE_TEL` | `+994 50 000 00 00` | real phone |
-| `WHATSAPP_NUMBER` | `994500000000` | real WhatsApp (digits only) |
+| `WHATSAPP_NUMBER` | `994504145258` (same as the phone) | confirm WhatsApp is on this number |
 | `EMAIL` | `info@kayamakina.az` | confirm the mailbox or alias exists |
 | `FORMSPREE_URL` | `null` (form opens the visitor's email client) | Formspree endpoint, e.g. `https://formspree.io/f/xxxx` |
 | `MAPS_EMBED_URL` | `null` (placeholder box shown) | Google Maps embed URL |
@@ -114,6 +113,21 @@ for a year.
 
 `public/_redirects` sends `/` to `/az/` (302 — change to 301 once the launch
 is settled). `out/index.html` also carries a meta-refresh fallback.
+
+## Old domain
+
+`kaya-makina.com` was the site's first address. It now only forwards: the
+Cloudflare Pages project `kaya-makina` (same Cloudflare account) serves the
+`old-domain/` folder, whose `_redirects` sends every URL permanently (301) to
+the matching page on kayamakina.az. That is what moves the Google results
+over to the new address, so keep the old domain registered for as long as
+Google or old links still point at it.
+
+To change the rules, edit `old-domain/_redirects` and run:
+
+```bash
+npx wrangler pages deploy old-domain --project-name=kaya-makina --branch=main
+```
 
 ## Architecture notes
 
